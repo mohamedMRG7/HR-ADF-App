@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:pageTemplate viewId="/mainTemplet.jsf" id="pt1">
+        <f:facet name="main">
+            <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="border-bottom-left-radius:0px;">
+                <af:spacer width="10" height="10" id="s4"/>
+                <af:outputText value="Selected Department" id="ot5" inlineStyle="color:Teal; font-size:large;"/>
+                <hr/>
+                <af:spacer width="10" height="10" id="s1"/>
+                <af:panelFormLayout id="pfl1" rows="1" labelAlignment="top" maxColumns="4">
+                    <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                                  label="#{bindings.DepartmentId.hints.label}"
+                                  required="#{bindings.DepartmentId.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                  maximumLength="#{bindings.DepartmentId.hints.precision}"
+                                  shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                                  label="#{bindings.DepartmentName.hints.label}"
+                                  required="#{bindings.DepartmentName.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                  maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                  shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it2"
+                                  inlineStyle="margin-left:5px; margin-right:5px;">
+                        <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
+                                  required="#{bindings.ManagerId.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.ManagerId.hints.displayWidth}"
+                                  maximumLength="#{bindings.ManagerId.hints.precision}"
+                                  shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it3"
+                                  inlineStyle="margin-left:10px; margin-right:5px;">
+                        <f:validator binding="#{bindings.ManagerId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.LocationId.inputValue}" label="#{bindings.LocationId.hints.label}"
+                                  required="#{bindings.LocationId.hints.mandatory}" readOnly="true"
+                                  columns="#{bindings.LocationId.hints.displayWidth}"
+                                  maximumLength="#{bindings.LocationId.hints.precision}"
+                                  shortDesc="#{bindings.LocationId.hints.tooltip}" id="it4">
+                        <f:validator binding="#{bindings.LocationId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+                    </af:inputText>
+                </af:panelFormLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl2" layout="vertical">
+                <af:spacer width="10" height="10" id="s2"/>
+                <af:outputText value="Departments" id="ot6" inlineStyle="color:Teal; font-size:large;"/>
+                 <hr/>
+                <af:spacer width="10" height="10" id="s3"/>
+                <af:table value="#{bindings.DepartmentsVO.collectionModel}" var="row"
+                          rows="#{bindings.DepartmentsVO.rangeSize}"
+                          emptyText="#{bindings.DepartmentsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="1" selectedRowKeys="#{bindings.DepartmentsVO.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.DepartmentsVO.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.DepartmentsVO.rangeSize}" id="t1"
+                          columnStretching="column:c2">
+                    <af:column headerText="#{bindings.DepartmentsVO.hints.DepartmentId.label}" id="c1">
+                        <af:outputText value="#{row.DepartmentId}"
+                                       shortDesc="#{bindings.DepartmentsVO.hints.DepartmentId.tooltip}" id="ot1">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsVO.hints.DepartmentId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.DepartmentsVO.hints.DepartmentName.label}" id="c2">
+                        <af:outputText value="#{row.DepartmentName}"
+                                       shortDesc="#{bindings.DepartmentsVO.hints.DepartmentName.tooltip}" id="ot2"/>
+                    </af:column>
+                    <af:column headerText="#{bindings.DepartmentsVO.hints.ManagerId.label}" id="c3">
+                        <af:outputText value="#{row.ManagerId}"
+                                       shortDesc="#{bindings.DepartmentsVO.hints.ManagerId.tooltip}" id="ot3">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsVO.hints.ManagerId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                    <af:column headerText="#{bindings.DepartmentsVO.hints.LocationId.label}" id="c4">
+                        <af:outputText value="#{row.LocationId}"
+                                       shortDesc="#{bindings.DepartmentsVO.hints.LocationId.tooltip}" id="ot4">
+                            <af:convertNumber groupingUsed="false"
+                                              pattern="#{bindings.DepartmentsVO.hints.LocationId.format}"/>
+                        </af:outputText>
+                    </af:column>
+                </af:table>
+            </af:panelGroupLayout>
+        </f:facet>
+    </af:pageTemplate>
+</ui:composition>

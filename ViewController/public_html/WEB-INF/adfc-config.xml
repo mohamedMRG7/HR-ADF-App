@@ -3,4 +3,7 @@
   <view id="logIn">
     <page>/logIn.jsf</page>
   </view>
+  <view id="departments">
+    <page>/departments.jsf</page>
+  </view>
 </adfc-config>
