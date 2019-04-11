@@ -15,10 +15,93 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">182.94824</property>
+         name="y">250.89648</property>
       <property
-         name="x">270.0</property>
+         name="pageFragment">true</property>
+      <property
+         name="x">94.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">addDepartment</property>
+      <property
+         name="page">/addDepartment.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>addDepartment&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">244.79297</property>
+      <property
+         name="x">524.0</property>
       <property
          name="pageFragment">true</property>
    </View>
+   <MethodCall
+      id="MethodCall8">
+      <property
+         name="activityId">CreateInsert</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>CreateInsert&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">107.44824</property>
+      <property
+         name="x">292.01465</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View2"
+      to="MethodCall8">
+      <property
+         name="fromOutcome">add</property>
+      <property
+         name="sdm:polyPoints">T50,94.0,196.5459,251.01465,107.09766,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="MethodCall8"
+      to="View3">
+      <property
+         name="fromOutcome">CreateInsert</property>
+      <property
+         name="sdm:polyPoints">R50,333.01465,107.09766,483.0,240.94238,L46</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall11">
+      <property
+         name="activityId">Rollback</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Rollback&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">311.44824</property>
+      <property
+         name="x">293.5</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="View3"
+      to="MethodCall11">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,483.0,247.94238,334.5,311.09766,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="MethodCall11"
+      to="View2">
+      <property
+         name="fromOutcome">Rollback</property>
+      <property
+         name="sdm:polyPoints">L50,252.5,311.09766,135.0,250.5459,R50</property>
+   </ControlFlowCase>
 </SDM>

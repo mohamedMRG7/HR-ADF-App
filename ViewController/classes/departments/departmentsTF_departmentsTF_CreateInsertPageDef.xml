@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.1.3.10.8"
+                id="departmentsTF_departmentsTF_CreateInsertPageDef" Package="departments" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="DepartmentsVO" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsVOIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="DepartmentsVOIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -6,4 +6,20 @@
   <view id="departments">
     <page>/departments.jsf</page>
   </view>
+  <control-flow-rule id="__2">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome>logIn</from-outcome>
+      <to-activity-id>logIn</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>departments</from-outcome>
+      <to-activity-id>departments</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__1">
+    <managed-bean-name>mainBean</managed-bean-name>
+    <managed-bean-class>view.MainClass</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

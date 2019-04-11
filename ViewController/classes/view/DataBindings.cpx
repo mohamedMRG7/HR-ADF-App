@@ -9,10 +9,20 @@
   <pageMap>
     <page path="/departmetsView.jsff" usageId="view_departmetsViewPageDef"/>
     <page path="/departments.jsf" usageId="view_departmentsPageDef"/>
+    <page path="/addDepartment.jsff" usageId="view_addDepartmentPageDef"/>
+    <page path="/departments/departmentsTF.xml#departmentsTF@CreateInsert"
+          usageId="view_departmentsTF_departmentsTF_CreateInsertPageDef"/>
+    <page path="/departments/departmentsTF.xml#departmentsTF@Rollback"
+          usageId="view_departmentsTF_departmentsTF_RollbackPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_departmetsViewPageDef" path="view.pageDefs.departmetsViewPageDef"/>
     <page id="view_departmentsPageDef" path="view.pageDefs.departmentsPageDef"/>
+    <page id="view_addDepartmentPageDef" path="view.pageDefs.addDepartmentPageDef"/>
+    <page id="view_departmentsTF_departmentsTF_CreateInsertPageDef"
+          path="departments.departmentsTF_departmentsTF_CreateInsertPageDef"/>
+    <page id="view_departmentsTF_departmentsTF_RollbackPageDef"
+          path="departments.departmentsTF_departmentsTF_RollbackPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.module"

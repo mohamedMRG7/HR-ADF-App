@@ -42,11 +42,12 @@
                 <af:panelGroupLayout id="pt_pgl5" layout="vertical" halign="center">
                     <af:link text="Add" id="pt_l3"
                              inlineStyle="font-size:large; " iconPosition="top"
-                             icon="#{resource['images:plus.png']}"/>
+                             icon="#{resource['images:plus.png']}" action="add"/>
                              
                     <af:spacer width="10" height="10" id="pt_s1"/>
                     <af:link text="Edite" id="pt_l4" inlineStyle="font-size:large;"
-                             icon="#{resource['images:edite.png']}" iconPosition="top"/>
+                             icon="#{resource['images:edite.png']}" iconPosition="top" partialTriggers="pt_psl1"
+                             partialSubmit="true" actionListener="#{mainBean.edite}"/>
                     <af:spacer width="10" height="10" id="pt_s2"/>
                     <af:link text="Search" id="pt_l6" inlineStyle="font-size:large;"
                              icon="#{resource['images:search.png']}" iconPosition="top"/>

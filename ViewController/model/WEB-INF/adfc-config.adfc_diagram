@@ -13,9 +13,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">173.29883</property>
+         name="y">289.59766</property>
       <property
-         name="x">240.0</property>
+         name="x">196.0</property>
    </View>
    <View
       id="View3">
@@ -32,4 +32,33 @@
       <property
          name="x">437.0</property>
    </View>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule4">
+      <property
+         name="activityId">*</property>
+      <property
+         name="y">164.29883</property>
+      <property
+         name="x">327.0</property>
+   </WildcardControlFlowRule>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="WildcardControlFlowRule4"
+      to="View2">
+      <property
+         name="fromOutcome">logIn</property>
+      <property
+         name="sdm:polyPoints">L50,291.0,164.44824,196.0,235.24707,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="WildcardControlFlowRule4"
+      to="View3">
+      <property
+         name="fromOutcome">departments</property>
+      <property
+         name="sdm:polyPoints">R50,363.0,164.44824,437.0,235.89648,T50</property>
+   </ControlFlowCase>
 </SDM>
