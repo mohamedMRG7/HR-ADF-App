@@ -8,6 +8,19 @@
               StateValidation="false"/>
   </executables>
   <bindings>
+    <tree IterBinding="DepartmentsVOIterator" id="DepartmentsVO">
+      <nodeDefinition DefName="model.vo.DepartmentsView" Name="DepartmentsVO0">
+        <AttrNames>
+          <Item Value="DepartmentId"/>
+          <Item Value="DepartmentName"/>
+          <Item Value="ManagerId"/>
+          <Item Value="LocationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="DepartmentsVOIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <attributeValues IterBinding="DepartmentsVOIterator" id="DepartmentId">
       <AttrNames>
         <Item Value="DepartmentId"/>
@@ -28,18 +41,5 @@
         <Item Value="LocationId"/>
       </AttrNames>
     </attributeValues>
-    <tree IterBinding="DepartmentsVOIterator" id="DepartmentsVO">
-      <nodeDefinition DefName="model.vo.DepartmentsView" Name="DepartmentsVO0">
-        <AttrNames>
-          <Item Value="DepartmentId"/>
-          <Item Value="DepartmentName"/>
-          <Item Value="ManagerId"/>
-          <Item Value="LocationId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action IterBinding="DepartmentsVOIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>

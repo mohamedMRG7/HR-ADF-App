@@ -1,16 +1,21 @@
 package view;
 
+import javax.faces.component.UIComponent;
 import javax.faces.event.ActionEvent;
 
+import oracle.adf.view.rich.component.rich.layout.RichPanelFormLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelGroupLayout;
 import oracle.adf.view.rich.component.rich.layout.RichPanelSplitter;
 import oracle.adf.view.rich.component.rich.nav.RichLink;
 import oracle.adf.view.rich.context.AdfFacesContext;
 
+import org.apache.myfaces.trinidad.event.AttributeChangeEvent;
+
 public class MainClass {
     private boolean readOnlyView=true;
     private boolean edaitableView=false;
-    private RichPanelGroupLayout deptView;
+    private RichPanelFormLayout readOnlyForm;
+    private RichPanelGroupLayout editableForm;
 
     public MainClass() {
     }
@@ -32,20 +37,48 @@ public class MainClass {
     }
 
     public void edite(ActionEvent actionEvent) {
-        // Add event code here...
+        
+        //Replace readOnly form with editable form when click on edite button 
         setReadOnlyView(false);
-        AdfFacesContext.getCurrentInstance().addPartialTarget(getDeptView());
+        setEdaitableView(true);
+        //Refresh the both form
+        addPartialTrigger(getEditableForm());
+        addPartialTrigger(getReadOnlyForm());
+      
        
     }
 
-
-  
-
-    public void setDeptView(RichPanelGroupLayout deptView) {
-        this.deptView = deptView;
+    public void setReadOnlyForm(RichPanelFormLayout readOnlyForm) {
+        this.readOnlyForm = readOnlyForm;
     }
 
-    public RichPanelGroupLayout getDeptView() {
-        return deptView;
+    public RichPanelFormLayout getReadOnlyForm() {
+        return readOnlyForm;
+    }
+
+    public void setEditableForm(RichPanelGroupLayout editableForm) {
+        this.editableForm = editableForm;
+    }
+
+    public RichPanelGroupLayout getEditableForm() {
+        return editableForm;
+    }
+    
+    //add partial trigger to component 
+    public void addPartialTrigger(UIComponent ui)
+    {
+         AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
+    }
+
+   
+
+    public String finishEdite() {
+        // Add event code here...
+        setReadOnlyView(true);
+        setEdaitableView(false);
+        //Refresh the both form
+        addPartialTrigger(getEditableForm());
+        addPartialTrigger(getReadOnlyForm());
+        return null;
     }
 }

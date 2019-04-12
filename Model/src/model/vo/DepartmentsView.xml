@@ -29,7 +29,14 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentName"
     EntityUsage="Departments"
-    AliasName="DEPARTMENT_NAME"/>
+    AliasName="DEPARTMENT_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <AUTOSUBMIT
+          Value="true"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ManagerId"
     PrecisionRule="true"
