@@ -13,6 +13,22 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_DEPT_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_DEPT_NAME"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_LOCATION_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="MANGER_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Departments"
     Entity="model.eo.Departments"/>
@@ -49,6 +65,66 @@
     EntityAttrName="LocationId"
     EntityUsage="Departments"
     AliasName="LOCATION_ID"/>
+  <ViewCriteria
+    Name="DepartmentsViewCriteria"
+    ViewObjectName="model.vo.DepartmentsView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentsViewCriteria_DepartmentsViewCriteria_row_0_DepartmentId"
+        ViewAttribute="DepartmentId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_DEPT_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DepartmentsViewCriteria_DepartmentsViewCriteria_row_0_DepartmentName"
+        ViewAttribute="DepartmentName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":P_DEPT_NAME"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ManagerId"
+        ViewAttribute="ManagerId"
+        Operator="="
+        Conjunction="AND"
+        Value=":MANGER_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="LocationId"
+        ViewAttribute="LocationId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_LOCATION_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="EmployeesView"
     ViewLink="model.vl.EmpDeptFkLink"

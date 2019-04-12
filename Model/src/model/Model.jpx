@@ -38,6 +38,14 @@
     </DesignTime>
   </Containee>
   <Containee
+    Name="rov"
+    PackageName="model.rov"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
     Name="vl"
     PackageName="model.vl"
     ObjectType="JboPackage">

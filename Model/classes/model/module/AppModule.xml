@@ -9,8 +9,15 @@
   ClearCacheOnRollback="true">
   <ViewUsage
     Name="DepartmentsVO"
-    ViewObjectName="model.vo.DepartmentsView"/>
+    ViewObjectName="model.vo.DepartmentsView">
+    <ViewCriteriaUsage
+      Name="DepartmentsViewCriteria"
+      FullName="model.vo.DepartmentsView.DepartmentsViewCriteria"/>
+  </ViewUsage>
   <ViewUsage
     Name="EmployeesVO"
     ViewObjectName="model.vo.EmployeesView"/>
+  <ViewUsage
+    Name="DepartmentsCustomSearchROV"
+    ViewObjectName="model.rov.DepartmentsCustomSearchROV"/>
 </AppModule>

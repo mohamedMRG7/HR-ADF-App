@@ -50,10 +50,12 @@
                              partialSubmit="true" actionListener="#{mainBean.edite}"/>
                     <af:spacer width="10" height="10" id="pt_s2"/>
                     <af:link text="Search" id="pt_l6" inlineStyle="font-size:large;"
-                             icon="#{resource['images:search.png']}" iconPosition="top"/>
+                             icon="#{resource['images:search.png']}" iconPosition="top"
+                             actionListener="#{mainBean.openSearchView}"/>
                     <af:spacer width="10" height="10" id="pt_s3"/>
                     <af:link text="Delete" id="pt_l5" inlineStyle="font-size:large;"
-                             icon="#{resource['images:bin.png']}" iconPosition="top"/>
+                             icon="#{resource['images:bin.png']}" iconPosition="top"
+                             actionListener="#{mainBean.showdeletePopUp}"/>
                 </af:panelGroupLayout>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc4"

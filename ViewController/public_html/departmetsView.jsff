@@ -3,6 +3,113 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:pageTemplate viewId="/mainTemplet.jsf" id="pt1">
         <f:facet name="main">
+            <af:popup childCreation="deferred" autoCancel="disabled" id="p1" binding="#{mainBean.deletePopUpView}">
+                <af:panelWindow id="pw1">
+                    <af:panelGroupLayout id="pgl7" layout="vertical" halign="center" valign="middle">
+                        <af:link text="Delete Department" id="l6" icon="#{resource['images:bin.png']}" disabled="true"
+                                 inlineStyle="font-size:large;"/>
+                                 <hr/>
+                        <af:spacer width="10" height="10" id="s14"/>
+                        <af:panelFormLayout id="pfl4">
+                            <af:inputText value="#{bindings.DepartmentId.inputValue}"
+                                          label="#{bindings.DepartmentId.hints.label}"
+                                          required="#{bindings.DepartmentId.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.DepartmentId.hints.displayWidth}"
+                                          maximumLength="#{bindings.DepartmentId.hints.precision}"
+                                          shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it13">
+                                <f:validator binding="#{bindings.DepartmentId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
+                            </af:inputText>
+                            <af:spacer width="10" height="10" id="s16"/>
+                            <af:inputText value="#{bindings.DepartmentName.inputValue}"
+                                          label="#{bindings.DepartmentName.hints.label}"
+                                          required="#{bindings.DepartmentName.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.DepartmentName.hints.displayWidth}"
+                                          maximumLength="#{bindings.DepartmentName.hints.precision}"
+                                          shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it14">
+                                <f:validator binding="#{bindings.DepartmentName.validator}"/>
+                            </af:inputText>
+                            <af:spacer width="10" height="10" id="s17"/>
+                            <af:inputText value="#{bindings.ManagerId.inputValue}"
+                                          label="#{bindings.ManagerId.hints.label}"
+                                          required="#{bindings.ManagerId.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.ManagerId.hints.displayWidth}"
+                                          maximumLength="#{bindings.ManagerId.hints.precision}"
+                                          shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it15">
+                                <f:validator binding="#{bindings.ManagerId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
+                            </af:inputText>
+                            <af:spacer width="10" height="10" id="s18"/>
+                            <af:inputText value="#{bindings.LocationId.inputValue}"
+                                          label="#{bindings.LocationId.hints.label}"
+                                          required="#{bindings.LocationId.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.LocationId.hints.displayWidth}"
+                                          maximumLength="#{bindings.LocationId.hints.precision}"
+                                          shortDesc="#{bindings.LocationId.hints.tooltip}" id="it16">
+                                <f:validator binding="#{bindings.LocationId.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
+                            </af:inputText>
+                        </af:panelFormLayout>
+                        <af:spacer width="10" height="10" id="s15"/>
+                        <af:panelGroupLayout id="pgl8" layout="horizontal">
+                            <af:spacer width="10" height="10" id="s13"/>
+                            <af:link text="Delete" id="l7" icon="#{resource['images:bin.png']}" iconPosition="top"
+                                     actionListener="#{mainBean.delete}"/>
+                            <af:spacer width="20" height="10" id="s12"/>
+                            <af:link text="Cancel" id="l8" iconPosition="top" icon="#{resource['images:cancel.png']}"
+                                     actionListener="#{mainBean.cancelPopUp}"/>
+                        </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                </af:panelWindow>
+            </af:popup>
+            <af:panelGroupLayout id="pgl5" layout="vertical" visible="#{mainBean.searchViewEnabled}"
+                                 binding="#{mainBean.searchViewForm}">
+                <af:outputText value="Search" id="ot7" inlineStyle="color:Teal; font-size:large;"/>
+                <af:spacer width="10" height="10" id="s8"/>
+                <af:panelFormLayout id="pfl3">
+                    <af:inputText value="#{bindings.DepartmentId1.inputValue}"
+                                  label="#{bindings.DepartmentId1.hints.label}"
+                                  required="#{bindings.DepartmentId1.hints.mandatory}"
+                                  columns="#{bindings.DepartmentId1.hints.displayWidth}"
+                                  maximumLength="#{bindings.DepartmentId1.hints.precision}"
+                                  shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="it9">
+                        <f:validator binding="#{bindings.DepartmentId1.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.DepartmentName1.inputValue}"
+                                  label="#{bindings.DepartmentName1.hints.label}"
+                                  required="#{bindings.DepartmentName1.hints.mandatory}"
+                                  columns="#{bindings.DepartmentName1.hints.displayWidth}"
+                                  maximumLength="#{bindings.DepartmentName1.hints.precision}"
+                                  shortDesc="#{bindings.DepartmentName1.hints.tooltip}" id="it10">
+                        <f:validator binding="#{bindings.DepartmentName1.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ManagerId1.inputValue}" label="#{bindings.ManagerId1.hints.label}"
+                                  required="#{bindings.ManagerId1.hints.mandatory}"
+                                  columns="#{bindings.ManagerId1.hints.displayWidth}"
+                                  maximumLength="#{bindings.ManagerId1.hints.precision}"
+                                  shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="it11">
+                        <f:validator binding="#{bindings.ManagerId1.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.LocationId1.inputValue}" label="#{bindings.LocationId1.hints.label}"
+                                  required="#{bindings.LocationId1.hints.mandatory}"
+                                  columns="#{bindings.LocationId1.hints.displayWidth}"
+                                  maximumLength="#{bindings.LocationId1.hints.precision}"
+                                  shortDesc="#{bindings.LocationId1.hints.tooltip}" id="it12">
+                        <f:validator binding="#{bindings.LocationId1.validator}"/>
+                    </af:inputText>
+                </af:panelFormLayout>
+                <af:panelGroupLayout id="pgl6" layout="horizontal">
+                    <af:spacer width="500" height="10" id="s10"/>
+                    <af:link text="Search" id="l3" icon="#{resource['images:search.png']}" iconPosition="top"
+                             actionListener="#{mainBean.departmentSearch}"/>
+                    <af:spacer width="10" height="10" id="s9"/>
+                    <af:link text="Reset" id="l4" icon="#{resource['images:reset.png']}" iconPosition="top"
+                             actionListener="#{mainBean.resetDepartmentSearch}"/>
+                    <af:spacer width="10" height="10" id="s11"/>
+                    <af:link text="Cancel" id="l5" icon="#{resource['images:cancel.png']}" iconPosition="top"
+                             actionListener="#{mainBean.cancelSearch}" immediate="true"/>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>
             <af:panelGroupLayout id="pgl1" layout="vertical" inlineStyle="border-bottom-left-radius:0px;">
                 <af:spacer width="10" height="10" id="s4"/>
                 <af:outputText value="Selected Department" id="ot5" inlineStyle="color:Teal; font-size:large;"/>
@@ -48,7 +155,7 @@
                 </af:panelFormLayout>
                 <af:panelGroupLayout id="pgl3" layout="vertical" binding="#{mainBean.editableForm}"
                                      visible="#{requestScope.mainBean.edaitableView}">
-                    <af:panelFormLayout id="pfl2" maxColumns="2" rows="1" labelAlignment="top">
+                    <af:panelFormLayout id="pfl2" maxColumns="4" rows="1" labelAlignment="top">
                         <af:inputText value="#{bindings.DepartmentId.inputValue}"
                                       label="#{bindings.DepartmentId.hints.label}"
                                       required="#{bindings.DepartmentId.hints.mandatory}"

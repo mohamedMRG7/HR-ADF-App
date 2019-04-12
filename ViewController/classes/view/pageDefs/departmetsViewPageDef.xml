@@ -5,6 +5,8 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="DepartmentsVO" RangeSize="25" DataControl="AppModuleDataControl" id="DepartmentsVOIterator"/>
+    <iterator Binds="DepartmentsCustomSearchROV" RangeSize="25" DataControl="AppModuleDataControl"
+              id="DepartmentsCustomSearchROVIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="DepartmentsVOIterator" id="DepartmentsVO">
@@ -39,5 +41,27 @@
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action IterBinding="DepartmentsVOIterator" id="Delete" InstanceName="AppModuleDataControl.DepartmentsVO"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentId1">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentName1">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="ManagerId1">
+      <AttrNames>
+        <Item Value="ManagerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="LocationId1">
+      <AttrNames>
+        <Item Value="LocationId"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>
