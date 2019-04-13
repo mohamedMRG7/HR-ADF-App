@@ -7,13 +7,20 @@
     <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
   </definitionFactories>
   <pageMap>
-    <page path="/departmetsView.jsff" usageId="view_departmetsViewPageDef"/>
-    <page path="/departments.jsf" usageId="view_departmentsPageDef"/>
-    <page path="/addDepartment.jsff" usageId="view_addDepartmentPageDef"/>
+    <page path="/departments/departmetsView.jsff" usageId="view_departmetsViewPageDef"/>
+    <page path="/departments/departments.jsf" usageId="view_departmentsPageDef"/>
+    <page path="/departments/addDepartment.jsff" usageId="view_addDepartmentPageDef"/>
     <page path="/departments/departmentsTF.xml#departmentsTF@CreateInsert"
           usageId="view_departmentsTF_departmentsTF_CreateInsertPageDef"/>
     <page path="/departments/departmentsTF.xml#departmentsTF@Rollback"
           usageId="view_departmentsTF_departmentsTF_RollbackPageDef"/>
+    <page path="/employees/employeesTF.xml#employeesTF@CreateInsert"
+          usageId="view_employeesTF_employeesTF_CreateInsertPageDef"/>
+    <page path="/employees/employeesTF.xml#employeesTF@Rollback"
+          usageId="view_employeesTF_employeesTF_RollbackPageDef"/>
+    <page path="/employeesView.jsff" usageId="view_employeesViewPageDef"/>
+    <page path="/employees.jsf" usageId="view_employeesPageDef"/>
+    <page path="/addEmployee.jsff" usageId="view_addEmployeePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_departmetsViewPageDef" path="view.pageDefs.departmetsViewPageDef"/>
@@ -23,6 +30,12 @@
           path="departments.departmentsTF_departmentsTF_CreateInsertPageDef"/>
     <page id="view_departmentsTF_departmentsTF_RollbackPageDef"
           path="departments.departmentsTF_departmentsTF_RollbackPageDef"/>
+    <page id="view_employeesTF_employeesTF_CreateInsertPageDef"
+          path="employees.employeesTF_employeesTF_CreateInsertPageDef"/>
+    <page id="view_employeesTF_employeesTF_RollbackPageDef" path="employees.employeesTF_employeesTF_RollbackPageDef"/>
+    <page id="view_employeesViewPageDef" path="view.pageDefs.employeesViewPageDef"/>
+    <page id="view_employeesPageDef" path="view.pageDefs.employeesPageDef"/>
+    <page id="view_addEmployeePageDef" path="view.pageDefs.addEmployeePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.module"

@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <Variable
+    Name="P_COMMITION"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_DEPT_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_EMAIL"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_EMP_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_FIRST_NAME"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_HIRE_DATE"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
+  <Variable
+    Name="P_JOB_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_LAST_NAME"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_MANAGER_ID"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_PHONE_NUM"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="P_SALARY"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <EntityUsage
     Name="Employees"
     Entity="model.eo.Employees"/>
@@ -22,20 +66,41 @@
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Employees"
-    AliasName="EMPLOYEE_ID"/>
+    AliasName="EMPLOYEE_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FirstName"
     PrecisionRule="true"
     EntityAttrName="FirstName"
     EntityUsage="Employees"
-    AliasName="FIRST_NAME"/>
+    AliasName="FIRST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LastName"
     EntityUsage="Employees"
-    AliasName="LAST_NAME"/>
+    AliasName="LAST_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Email"
     IsUnique="true"
@@ -43,51 +108,223 @@
     PrecisionRule="true"
     EntityAttrName="Email"
     EntityUsage="Employees"
-    AliasName="EMAIL"/>
+    AliasName="EMAIL">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="PhoneNumber"
     PrecisionRule="true"
     EntityAttrName="PhoneNumber"
     EntityUsage="Employees"
-    AliasName="PHONE_NUMBER"/>
+    AliasName="PHONE_NUMBER">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="HireDate"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="HireDate"
     EntityUsage="Employees"
-    AliasName="HIRE_DATE"/>
+    AliasName="HIRE_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="JobId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="JobId"
     EntityUsage="Employees"
-    AliasName="JOB_ID"/>
+    AliasName="JOB_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Salary"
     PrecisionRule="true"
     EntityAttrName="Salary"
     EntityUsage="Employees"
-    AliasName="SALARY"/>
+    AliasName="SALARY">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CommissionPct"
     PrecisionRule="true"
     EntityAttrName="CommissionPct"
     EntityUsage="Employees"
-    AliasName="COMMISSION_PCT"/>
+    AliasName="COMMISSION_PCT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ManagerId"
     PrecisionRule="true"
     EntityAttrName="ManagerId"
     EntityUsage="Employees"
-    AliasName="MANAGER_ID"/>
+    AliasName="MANAGER_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DepartmentId"
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Employees"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="EmployeesViewCriteria"
+    ViewObjectName="model.vo.EmployeesView"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="EmployeesViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="EmployeeId"
+        ViewAttribute="EmployeeId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_EMP_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="FirstName"
+        ViewAttribute="FirstName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":P_FIRST_NAME"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="LastName"
+        ViewAttribute="LastName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":P_LAST_NAME"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Email"
+        ViewAttribute="Email"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":P_EMAIL"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="PhoneNumber"
+        ViewAttribute="PhoneNumber"
+        Operator="STARTSWITH"
+        Conjunction="AND"
+        Value=":P_PHONE_NUM"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="HireDate"
+        ViewAttribute="HireDate"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_HIRE_DATE"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="JobId"
+        ViewAttribute="JobId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_JOB_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="Salary"
+        ViewAttribute="Salary"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_SALARY"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EmployeesViewCriteria_EmployeesViewCriteria_row_0_CommissionPct"
+        ViewAttribute="CommissionPct"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_COMMITION"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ManagerId"
+        ViewAttribute="ManagerId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_MANAGER_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="EmployeesViewCriteria_EmployeesViewCriteria_row_0_DepartmentId"
+        ViewAttribute="DepartmentId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_DEPT_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="DepartmentsView"
     ViewLink="model.vl.DeptMgrFkLink"

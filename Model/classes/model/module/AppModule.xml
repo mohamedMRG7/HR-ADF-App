@@ -16,8 +16,15 @@
   </ViewUsage>
   <ViewUsage
     Name="EmployeesVO"
-    ViewObjectName="model.vo.EmployeesView"/>
+    ViewObjectName="model.vo.EmployeesView">
+    <ViewCriteriaUsage
+      Name="EmployeesViewCriteria"
+      FullName="model.vo.EmployeesView.EmployeesViewCriteria"/>
+  </ViewUsage>
   <ViewUsage
     Name="DepartmentsCustomSearchROV"
     ViewObjectName="model.rov.DepartmentsCustomSearchROV"/>
+  <ViewUsage
+    Name="EmployeesCustomSearchROV"
+    ViewObjectName="model.rov.EmployeesCustomSearchROV"/>
 </AppModule>

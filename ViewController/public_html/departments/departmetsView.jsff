@@ -66,7 +66,7 @@
                                  binding="#{mainBean.searchViewForm}">
                 <af:outputText value="Search" id="ot7" inlineStyle="color:Teal; font-size:large;"/>
                 <af:spacer width="10" height="10" id="s8"/>
-                <af:panelFormLayout id="pfl3">
+                <af:panelFormLayout id="pfl3" maxColumns="2" rows="1">
                     <af:inputText value="#{bindings.DepartmentId1.inputValue}"
                                   label="#{bindings.DepartmentId1.hints.label}"
                                   required="#{bindings.DepartmentId1.hints.mandatory}"

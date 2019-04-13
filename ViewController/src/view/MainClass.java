@@ -2,6 +2,8 @@ package view;
 
 import departments.DepartmentBindingIDS;
 
+import employees.EmployeeBindingIDS;
+
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -33,7 +35,7 @@ public class MainClass {
     private boolean searchViewEnabled = false;
     private RichPanelGroupLayout searchViewForm;
     private RichPopup deletePopUpView;
-
+ 
     public MainClass() {
         //get the value from the session to maintain the search view after click search or reset
         if (getSessionVariable("searchViewEnabled") != null) {
@@ -114,10 +116,13 @@ public class MainClass {
         //Replace readOnly form with editable form when click on edite button
         setReadOnlyView(false);
         setEdaitableView(true);
-        //Refresh the both form
-        addPartialTrigger(getEditableForm());
-        addPartialTrigger(getReadOnlyForm());
+        //Refresh the both department form form
+    
+            addPartialTrigger(getEditableForm());
+            addPartialTrigger(getReadOnlyForm());
+        
 
+       
 
     }
 
@@ -125,9 +130,15 @@ public class MainClass {
         // Add event code here...
         setReadOnlyView(true);
         setEdaitableView(false);
-        //Refresh the both form
-        addPartialTrigger(getEditableForm());
-        addPartialTrigger(getReadOnlyForm());
+        
+        //Refresh the both department form form
+    
+            addPartialTrigger(getEditableForm());
+            addPartialTrigger(getReadOnlyForm());
+        
+
+      
+        
         return null;
     }
 
@@ -149,21 +160,23 @@ public class MainClass {
 
     public void resetDepartmentSearch(ActionEvent actionEvent) {
         // Add event code here...
-        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID,null);
-        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME,null);
-        setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID,null);
-        setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID,null);
+        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID, null);
+        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
+        setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
+        setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
     }
 
     public void departmentSearch(ActionEvent actionEvent) {
         // Add event code here...
 
-
+        /*DepartmentsCustomSearchVO  Binding Attruibutes */
         String departmentID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID);
         String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
         String mangerId = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID);
         String locationID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID);
 
+
+        /*Update employee iterator VO*/
         DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         DCIteratorBinding departmentiterator =
             (DCIteratorBinding) dcContainer.get(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
@@ -176,6 +189,60 @@ public class MainClass {
         departmentVO.executeQuery();
 
     }
+
+
+    public void employeesSearch(ActionEvent actionEvent) {
+
+        /*EmployeeCustomSearchVO  Binding Attruibutes */
+        String employeeId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.EMPLOYEE_ID);
+        String firstName = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.FIRST_NAME);
+        String lastName = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.LAST_NAME);
+        String email = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.EMAIL);
+        String phoneNum = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.PHONE_NUMBER);
+        String hireDate = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.HIRE_DATE);
+        String jobId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.JOB_ID);
+        String salary = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.SALARY);
+        String commition = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.COMMITON_PCT);
+        String managerId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID);
+        String departmentID = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.DEPARTMENT_ID);
+
+        /*Update employee iterator VO*/
+        DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        DCIteratorBinding employeeIterator =
+            (DCIteratorBinding) dcContainer.get(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR);
+        ViewObject employeeVO = employeeIterator.getViewObject();
+        employeeVO.setNamedWhereClauseParam("P_EMP_ID", employeeId);
+        employeeVO.setNamedWhereClauseParam("P_FIRST_NAME", firstName);
+        employeeVO.setNamedWhereClauseParam("P_LAST_NAME", lastName);
+        employeeVO.setNamedWhereClauseParam("P_EMAIL", email);
+        employeeVO.setNamedWhereClauseParam("P_PHONE_NUM", phoneNum);
+        employeeVO.setNamedWhereClauseParam("P_HIRE_DATE", hireDate);
+        employeeVO.setNamedWhereClauseParam("P_JOB_ID", jobId);
+        employeeVO.setNamedWhereClauseParam("P_SALARY", salary);
+        employeeVO.setNamedWhereClauseParam("P_COMMITION", commition);
+        employeeVO.setNamedWhereClauseParam("P_MANAGER_ID", managerId);
+        employeeVO.setNamedWhereClauseParam("P_DEPT_ID", departmentID);
+  
+        employeeVO.executeQuery();
+    }
+
+    public void resetEmployeeSearch(ActionEvent actionEvent) {
+        // Add event code here...
+        setAttributeBindingInputeValue(EmployeeBindingIDS.EMPLOYEE_ID, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.COMMITON_PCT, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.DEPARTMENT_ID, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.EMAIL, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.FIRST_NAME, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.HIRE_DATE, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.JOB_ID, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.LAST_NAME, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.PHONE_NUMBER, null);
+        setAttributeBindingInputeValue(EmployeeBindingIDS.SALARY, null);
+    }
+
+
+
 
 
     public void showdeletePopUp(ActionEvent actionEvent) {
@@ -194,6 +261,12 @@ public class MainClass {
         // Add event code here...
         hidePopUp(getDeletePopUpView());
     }
+    
+    
+    
+   
+    
+    
 
     /*
      *
@@ -222,9 +295,8 @@ public class MainClass {
         AttributeBinding attr = (AttributeBinding) bContainer.getControlBinding(bindingAtrrID);
         return attr.getInputValue();
     }
-    
-    public void setAttributeBindingInputeValue(String attrID,Object value)
-    {
+
+    public void setAttributeBindingInputeValue(String attrID, Object value) {
         BindingContext bContext = BindingContext.getCurrent();
         BindingContainer bContainer = bContext.getCurrentBindingsEntry();
         AttributeBinding attr = (AttributeBinding) bContainer.getControlBinding(attrID);
@@ -247,4 +319,7 @@ public class MainClass {
     }
 
 
+
+
+  
 }

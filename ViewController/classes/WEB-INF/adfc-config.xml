@@ -4,7 +4,10 @@
     <page>/logIn.jsf</page>
   </view>
   <view id="departments">
-    <page>/departments.jsf</page>
+    <page>/departments/departments.jsf</page>
+  </view>
+  <view id="employees">
+    <page>/employees.jsf</page>
   </view>
   <control-flow-rule id="__2">
     <from-activity-id>*</from-activity-id>
@@ -15,6 +18,10 @@
     <control-flow-case id="__4">
       <from-outcome>departments</from-outcome>
       <to-activity-id>departments</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>employees</from-outcome>
+      <to-activity-id>employees</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__1">

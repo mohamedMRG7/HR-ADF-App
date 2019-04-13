@@ -219,6 +219,15 @@
                   <url path="src/"/>
                </list>
             </hash>
+            <hash>
+               <url n="content-folder-url" path="public_html/employees/"/>
+               <list n="pattern-filters">
+                  <string v="+employees/EmployeeBindingIDS.java"/>
+               </list>
+               <list n="url-path">
+                  <url path="public_html/"/>
+               </list>
+            </hash>
          </list>
          <list n="url-path"/>
       </hash>

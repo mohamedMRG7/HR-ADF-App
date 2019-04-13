@@ -6,10 +6,10 @@
       <shared/>
     </data-control-scope>
     <view id="departmetsView">
-      <page>/departmetsView.jsff</page>
+      <page>/departments/departmetsView.jsff</page>
     </view>
     <view id="addDepartment">
-      <page>/addDepartment.jsff</page>
+      <page>/departments/addDepartment.jsff</page>
     </view>
     <method-call id="CreateInsert">
       <method>#{bindings.CreateInsert.execute}</method>
