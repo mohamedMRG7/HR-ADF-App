@@ -18,9 +18,10 @@
           usageId="view_employeesTF_employeesTF_CreateInsertPageDef"/>
     <page path="/employees/employeesTF.xml#employeesTF@Rollback"
           usageId="view_employeesTF_employeesTF_RollbackPageDef"/>
-    <page path="/employeesView.jsff" usageId="view_employeesViewPageDef"/>
-    <page path="/employees.jsf" usageId="view_employeesPageDef"/>
-    <page path="/addEmployee.jsff" usageId="view_addEmployeePageDef"/>
+    <page path="/employees/employeesView.jsff" usageId="view_employeesViewPageDef"/>
+    <page path="/employees/employees.jsf" usageId="view_employeesPageDef"/>
+    <page path="/employees/addEmployee.jsff" usageId="view_addEmployeePageDef"/>
+    <page path="/logIn.jsf" usageId="view_logInPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_departmetsViewPageDef" path="view.pageDefs.departmetsViewPageDef"/>
@@ -36,6 +37,7 @@
     <page id="view_employeesViewPageDef" path="view.pageDefs.employeesViewPageDef"/>
     <page id="view_employeesPageDef" path="view.pageDefs.employeesPageDef"/>
     <page id="view_addEmployeePageDef" path="view.pageDefs.addEmployeePageDef"/>
+    <page id="view_logInPageDef" path="view.pageDefs.logInPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.module"

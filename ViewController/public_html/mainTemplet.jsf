@@ -12,11 +12,11 @@
                     <af:panelGroupLayout id="pt_pgl2" layout="vertical"
                                          inlineStyle="margin-left:4px; margin-right:4px;">
                         <af:outputLabel value="WELCOM" id="pt_ol1"/>
-                        <af:outputText value="Mohamed" id="pt_ot1"
+                        <af:outputText value="#{mainBean.userData.usreName}" id="pt_ot1"
                                        inlineStyle="background-color:transparent; color:Blue;"/>
                     </af:panelGroupLayout>
-                    <af:image source="#{resource['images:exit.png']}" id="pt_i2"
-                              inlineStyle="max-height:80%; max-width:80%; margin-left:5px; margin-right:5px;"/>
+                    <af:link id="pt_l7" icon="#{resource['images:exit.png']}" inlineStyle="font-size:medium;"
+                             action="#{authBean.logOut}"/>
                 </af:panelGroupLayout>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc2" valign="middle" halign="center"

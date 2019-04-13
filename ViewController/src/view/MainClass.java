@@ -1,5 +1,8 @@
 package view;
 
+import auth.AuthFilter;
+import auth.UserData;
+
 import departments.DepartmentBindingIDS;
 
 import employees.EmployeeBindingIDS;
@@ -35,12 +38,23 @@ public class MainClass {
     private boolean searchViewEnabled = false;
     private RichPanelGroupLayout searchViewForm;
     private RichPopup deletePopUpView;
- 
+    private UserData userData;
+
     public MainClass() {
         //get the value from the session to maintain the search view after click search or reset
         if (getSessionVariable("searchViewEnabled") != null) {
             searchViewEnabled = (Boolean) getSessionVariable("searchViewEnabled");
         }
+        userData=(UserData)getSessionVariable(AuthFilter.USER_INFO_SESSION_KEY);
+    }
+
+
+    public void setUserData(UserData userData) {
+        this.userData = userData;
+    }
+
+    public UserData getUserData() {
+        return userData;
     }
 
     public void setReadOnlyView(boolean readOnlyView) {
@@ -117,12 +131,10 @@ public class MainClass {
         setReadOnlyView(false);
         setEdaitableView(true);
         //Refresh the both department form form
-    
-            addPartialTrigger(getEditableForm());
-            addPartialTrigger(getReadOnlyForm());
-        
 
-       
+        addPartialTrigger(getEditableForm());
+        addPartialTrigger(getReadOnlyForm());
+
 
     }
 
@@ -130,15 +142,13 @@ public class MainClass {
         // Add event code here...
         setReadOnlyView(true);
         setEdaitableView(false);
-        
-        //Refresh the both department form form
-    
-            addPartialTrigger(getEditableForm());
-            addPartialTrigger(getReadOnlyForm());
-        
 
-      
-        
+        //Refresh the both department form form
+
+        addPartialTrigger(getEditableForm());
+        addPartialTrigger(getReadOnlyForm());
+
+
         return null;
     }
 
@@ -164,6 +174,8 @@ public class MainClass {
         setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
+        
+        getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR).executeQuery();
     }
 
     public void departmentSearch(ActionEvent actionEvent) {
@@ -177,14 +189,12 @@ public class MainClass {
 
 
         /*Update employee iterator VO*/
-        DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
-        DCIteratorBinding departmentiterator =
-            (DCIteratorBinding) dcContainer.get(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
-        ViewObject departmentVO = departmentiterator.getViewObject();
-        departmentVO.setNamedWhereClauseParam("P_DEPT_ID", departmentID);
+       
+        ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
+        departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
         departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
-        departmentVO.setNamedWhereClauseParam("MANGER_ID", mangerId);
-        departmentVO.setNamedWhereClauseParam("P_LOCATION_ID", locationID);
+        departmentVO.setNamedWhereClauseParam("MANGER_ID", convertStringForSearch(mangerId));
+        departmentVO.setNamedWhereClauseParam("P_LOCATION_ID", convertStringForSearch(locationID));
 
         departmentVO.executeQuery();
 
@@ -207,22 +217,19 @@ public class MainClass {
         String departmentID = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.DEPARTMENT_ID);
 
         /*Update employee iterator VO*/
-        DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
-        DCIteratorBinding employeeIterator =
-            (DCIteratorBinding) dcContainer.get(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR);
-        ViewObject employeeVO = employeeIterator.getViewObject();
-        employeeVO.setNamedWhereClauseParam("P_EMP_ID", employeeId);
+        ViewObject employeeVO = getViewObjectFromIterator(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR);
+        employeeVO.setNamedWhereClauseParam("P_EMP_ID", convertStringForSearch(employeeId));
         employeeVO.setNamedWhereClauseParam("P_FIRST_NAME", firstName);
         employeeVO.setNamedWhereClauseParam("P_LAST_NAME", lastName);
         employeeVO.setNamedWhereClauseParam("P_EMAIL", email);
         employeeVO.setNamedWhereClauseParam("P_PHONE_NUM", phoneNum);
         employeeVO.setNamedWhereClauseParam("P_HIRE_DATE", hireDate);
         employeeVO.setNamedWhereClauseParam("P_JOB_ID", jobId);
-        employeeVO.setNamedWhereClauseParam("P_SALARY", salary);
-        employeeVO.setNamedWhereClauseParam("P_COMMITION", commition);
-        employeeVO.setNamedWhereClauseParam("P_MANAGER_ID", managerId);
-        employeeVO.setNamedWhereClauseParam("P_DEPT_ID", departmentID);
-  
+        employeeVO.setNamedWhereClauseParam("P_SALARY", convertStringForSearch(salary));
+        employeeVO.setNamedWhereClauseParam("P_COMMITION", convertStringForSearch(commition));
+        employeeVO.setNamedWhereClauseParam("P_MANAGER_ID", convertStringForSearch(managerId));
+        employeeVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
+
         employeeVO.executeQuery();
     }
 
@@ -239,10 +246,9 @@ public class MainClass {
         setAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(EmployeeBindingIDS.PHONE_NUMBER, null);
         setAttributeBindingInputeValue(EmployeeBindingIDS.SALARY, null);
+        getViewObjectFromIterator(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR).executeQuery();
+
     }
-
-
-
 
 
     public void showdeletePopUp(ActionEvent actionEvent) {
@@ -261,12 +267,7 @@ public class MainClass {
         // Add event code here...
         hidePopUp(getDeletePopUpView());
     }
-    
-    
-    
-   
-    
-    
+
 
     /*
      *
@@ -318,7 +319,29 @@ public class MainClass {
         popUpCom.hide();
     }
 
+    public static ViewObject getViewObjectFromIterator(String iteratorID) {
+        DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
+        DCIteratorBinding employeeIterator =
+            (DCIteratorBinding) dcContainer.get(iteratorID);
+        ViewObject employeeVO = employeeIterator.getViewObject();
+        
+     System.out.println(employeeVO.getWhereClause());
+      /*  for(int i=1; i<=employeeVO.getWhereClauseParams().length;i++)
+        {
+            employeeVO.setWhereClauseParam(i, null);
+        }*/
+        return employeeVO;
+    }
 
+    public Integer convertStringForSearch(String value) {
+        try {
+            Integer i = Integer.valueOf(value);
+            return i;
+        } catch (Exception e) {
+            return null;
+        }
+
+    }
 
 
   

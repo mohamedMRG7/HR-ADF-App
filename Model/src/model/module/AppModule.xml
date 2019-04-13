@@ -22,9 +22,20 @@
       FullName="model.vo.EmployeesView.EmployeesViewCriteria"/>
   </ViewUsage>
   <ViewUsage
+    Name="EmployeesCustomSearchROV"
+    ViewObjectName="model.rov.EmployeesCustomSearchROV"/>
+  <ViewUsage
     Name="DepartmentsCustomSearchROV"
     ViewObjectName="model.rov.DepartmentsCustomSearchROV"/>
   <ViewUsage
-    Name="EmployeesCustomSearchROV"
-    ViewObjectName="model.rov.EmployeesCustomSearchROV"/>
+    Name="UserInfo"
+    ViewObjectName="model.rov.UserInfo">
+    <ViewCriteriaUsage
+      Name="UserInfoCriteria"
+      FullName="model.rov.UserInfo.UserInfoCriteria"/>
+  </ViewUsage>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </AppModule>

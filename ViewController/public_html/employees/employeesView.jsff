@@ -7,7 +7,7 @@
                 <af:panelWindow id="pw1">
                     <af:panelGroupLayout id="pgl7" layout="vertical" halign="center" valign="middle">
                         <af:link text="Delete Employee" id="l6" icon="#{resource['images:bin.png']}" disabled="true"
-                                 inlineStyle="font-size:large;"/>
+                                 inlineStyle="font-size:large; margin-left:20px; margin-right:20px;"/>
                                  <hr/>
                         <af:spacer width="10" height="10" id="s14"/>
                         <af:panelFormLayout id="pfl4">

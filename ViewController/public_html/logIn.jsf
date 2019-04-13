@@ -2,6 +2,7 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
    <af:document title="LogIn.jsf" id="d1" inlineStyle="background-color:Highlight;">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="50px" id="gr2">
@@ -23,13 +24,20 @@
                                   source="#{resource['images:hr.png']}"/>
                         <af:panelFormLayout id="pfl1">
                             <f:facet name="footer">
-                                <af:button text="Sign in" id="b1"
-                                           inlineStyle="margin-left:40%; margin-top:10px; margin-bottom:20px;"/>
+                                <af:panelGroupLayout id="pgl2" layout="horizontal" inlineStyle="margin-bottom:20px;">
+                                    <af:spacer width="100" height="10" id="s1"/>
+                                    <af:link text="Log in" id="l1" icon="#{resource['images:login.png']}"
+                                             iconPosition="top" inlineStyle="font-size:small;"
+                                             action="#{authBean.logIn}"/>
+                                </af:panelGroupLayout>
                             </f:facet>
                             <af:inputText label="User Name" id="it1"
-                                          inlineStyle="margin-left:30px; margin-right:30px;"/>
+                                          inlineStyle="margin-left:30px; margin-right:30px;"
+                                          value="#{authBean.userName}" required="true"/>
                             <af:inputText label="Password" id="it2"
-                                          inlineStyle="margin-left:30px; margin-right:30px; margin-top:10px;"/>
+                                          inlineStyle="margin-left:30px; margin-right:30px; margin-top:10px;"
+                                          value="#{authBean.password}" secret="true" required="true"/>
+                            <af:spacer width="10" height="10" id="s2"/>
                         </af:panelFormLayout>
                     </af:gridCell>
                     <af:gridCell width="100px" halign="stretch" valign="stretch" id="gc1"

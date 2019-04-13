@@ -13,9 +13,9 @@
       <property
          name="exceptionHandler">false</property>
       <property
-         name="y">162.89648</property>
+         name="y">164.49414</property>
       <property
-         name="x">110.0</property>
+         name="x">101.0</property>
    </View>
    <View
       id="View3">
@@ -37,20 +37,10 @@
       <property
          name="activityId">*</property>
       <property
-         name="y">164.29883</property>
+         name="y">166.59766</property>
       <property
-         name="x">327.0</property>
+         name="x">316.0</property>
    </WildcardControlFlowRule>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase5"
-      from="WildcardControlFlowRule4"
-      to="View2">
-      <property
-         name="fromOutcome">logIn</property>
-      <property
-         name="sdm:polyPoints">L50,291.0,164.44824,151.0,162.5459,R50</property>
-   </ControlFlowCase>
    <ControlFlowCase
       islink="true"
       id="ControlFlowCase6"
@@ -59,14 +49,14 @@
       <property
          name="fromOutcome">departments</property>
       <property
-         name="sdm:polyPoints">R50,363.0,164.44824,482.0,164.19531,L50</property>
+         name="sdm:polyPoints">R50,352.0,166.74707,482.0,164.19531,L50</property>
    </ControlFlowCase>
    <View
       id="View7">
       <property
          name="activityId">employees</property>
       <property
-         name="page">/employees.jsf</property>
+         name="page">/employees/employees.jsf</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>employees&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
@@ -84,6 +74,16 @@
       <property
          name="fromOutcome">employees</property>
       <property
-         name="sdm:polyPoints">T50,327.0,121.94824,324.0,50.5459,B50</property>
+         name="sdm:polyPoints">T50,316.0,124.24707,324.0,50.5459,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="WildcardControlFlowRule4"
+      to="View2">
+      <property
+         name="fromOutcome">logIn</property>
+      <property
+         name="sdm:polyPoints">L50,280.0,166.74707,142.0,164.14355,R50</property>
    </ControlFlowCase>
 </SDM>

@@ -12,11 +12,13 @@
   <DesignTime>
     <Attr Name="_isExpertMode" Value="true"/>
   </DesignTime>
-  <SQLQuery><![CDATA[SELECT '' DEPARTMENT_ID  
-,'' DEPARTMENT_NAME  
-,'' MANAGER_ID 
-,'' LOCATION_ID  
-FROM DUAL]]></SQLQuery>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.rov.DepartmentsCustomSearchROV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT '' DEPARTMENT_ID,'' DEPARTMENT_NAME,'' MANAGER_ID,'' LOCATION_ID FROM DUAL]]></SQLQuery>
   <ViewAttribute
     Name="DepartmentId"
     IsPersistent="false"
@@ -25,9 +27,8 @@ FROM DUAL]]></SQLQuery>
     Type="java.lang.String"
     ColumnType="VARCHAR2"
     AliasName="DEPARTMENT_ID"
-    Passivate="true"
     Expression="DEPARTMENT_ID"
-    SQLType="INTEGER">
+    SQLType="CHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -43,9 +44,8 @@ FROM DUAL]]></SQLQuery>
     Type="java.lang.String"
     ColumnType="CHAR"
     AliasName="DEPARTMENT_NAME"
-    Passivate="true"
     Expression="DEPARTMENT_NAME"
-    SQLType="VARCHAR">
+    SQLType="CHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -61,9 +61,8 @@ FROM DUAL]]></SQLQuery>
     Type="java.lang.String"
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
-    Passivate="true"
     Expression="MANAGER_ID"
-    SQLType="NUMERIC">
+    SQLType="CHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -79,9 +78,8 @@ FROM DUAL]]></SQLQuery>
     Type="java.lang.String"
     ColumnType="CHAR"
     AliasName="LOCATION_ID"
-    Passivate="true"
     Expression="LOCATION_ID"
-    SQLType="NUMERIC">
+    SQLType="CHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
@@ -89,4 +87,8 @@ FROM DUAL]]></SQLQuery>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

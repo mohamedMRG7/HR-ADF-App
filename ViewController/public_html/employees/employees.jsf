@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="employees.jsf" id="d1">
+    <af:document title="employees.jsf" id="d1" inlineStyle="background-color:Highlight;">
         <af:form id="f1">
             <af:region value="#{bindings.employeesTF1.regionModel}" id="r1"/>
         </af:form>
