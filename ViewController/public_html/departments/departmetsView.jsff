@@ -106,7 +106,8 @@
                 <af:outputText value="Selected Department" id="ot5" inlineStyle="color:Teal; font-size:large;"/>
                 <hr/>
                 <af:spacer width="10" height="10" id="s1"/>
-                <af:panelFormLayout id="pfl1" maxColumns="4" rows="1" labelAlignment="top">
+                <af:panelFormLayout id="pfl1" maxColumns="4" rows="1" labelAlignment="top"
+                                    binding="#{mainBean.readOnlyForm}" visible="#{requestScope.mainBean.readOnlyView}">
                     <af:inputText value="#{bindings.DepartmentId.inputValue}"
                                   label="#{bindings.DepartmentId.hints.label}"
                                   required="#{bindings.DepartmentId.hints.mandatory}" readOnly="true"

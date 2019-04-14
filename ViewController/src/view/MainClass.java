@@ -171,7 +171,7 @@ public class MainClass {
     public void resetDepartmentSearch(ActionEvent actionEvent) {
         // Add event code here...
         setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID, null);
-        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
+       // setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
         
