@@ -50,7 +50,7 @@
     ColumnType="VARCHAR2"
     AliasName="DEPARTMENT_ID"
     Expression="DEPARTMENT_ID"
-    SQLType="VARCHAR"
+    SQLType="INTEGER"
     LOVName="LOV_DepartmentId"
     Passivate="true">
     <Properties>
@@ -61,6 +61,8 @@
           Value="choice"/>
         <AUTOSUBMIT
           Value="true"/>
+        <LABEL
+          ResId="model.rov.DepartmentsCustomSearchROV.DepartmentId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -78,6 +80,8 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <LABEL
+          ResId="model.rov.DepartmentsCustomSearchROV.DepartmentName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -95,6 +99,8 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <LABEL
+          ResId="model.rov.DepartmentsCustomSearchROV.ManagerId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -112,6 +118,8 @@
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
+        <LABEL
+          ResId="model.rov.DepartmentsCustomSearchROV.LocationId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

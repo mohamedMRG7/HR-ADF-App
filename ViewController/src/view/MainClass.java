@@ -7,6 +7,8 @@ import departments.DepartmentBindingIDS;
 
 import employees.EmployeeBindingIDS;
 
+import java.util.Locale;
+
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
@@ -45,7 +47,7 @@ public class MainClass {
         if (getSessionVariable("searchViewEnabled") != null) {
             searchViewEnabled = (Boolean) getSessionVariable("searchViewEnabled");
         }
-        userData=(UserData)getSessionVariable(AuthFilter.USER_INFO_SESSION_KEY);
+        userData = (UserData) getSessionVariable(AuthFilter.USER_INFO_SESSION_KEY);
     }
 
 
@@ -113,6 +115,7 @@ public class MainClass {
         return deletePopUpView;
     }
 
+  
 
     /*
      *
@@ -171,10 +174,10 @@ public class MainClass {
     public void resetDepartmentSearch(ActionEvent actionEvent) {
         // Add event code here...
         setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID, null);
-       // setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
+        // setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
-        
+
         getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR).executeQuery();
     }
 
@@ -183,16 +186,16 @@ public class MainClass {
 
         /*DepartmentsCustomSearchVO  Binding Attruibutes */
         String departmentID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
-      //  String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
+        //  String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
         String mangerId = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID);
         String locationID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID);
 
         System.out.println(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
         /*Update employee iterator VO*/
-       
+
         ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
         departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
-      //  departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
+        //  departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
         departmentVO.setNamedWhereClauseParam("MANGER_ID", convertStringForSearch(mangerId));
         departmentVO.setNamedWhereClauseParam("P_LOCATION_ID", convertStringForSearch(locationID));
 
@@ -269,6 +272,8 @@ public class MainClass {
     }
 
 
+   
+
     /*
      *
      *
@@ -321,12 +326,11 @@ public class MainClass {
 
     public static ViewObject getViewObjectFromIterator(String iteratorID) {
         DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
-        DCIteratorBinding employeeIterator =
-            (DCIteratorBinding) dcContainer.get(iteratorID);
+        DCIteratorBinding employeeIterator = (DCIteratorBinding) dcContainer.get(iteratorID);
         ViewObject employeeVO = employeeIterator.getViewObject();
-        
-     System.out.println(employeeVO.getWhereClause());
-      /*  for(int i=1; i<=employeeVO.getWhereClauseParams().length;i++)
+
+        System.out.println(employeeVO.getWhereClause());
+        /*  for(int i=1; i<=employeeVO.getWhereClauseParams().length;i++)
         {
             employeeVO.setWhereClauseParam(i, null);
         }*/
@@ -345,4 +349,6 @@ public class MainClass {
 
 
   
+
+
 }

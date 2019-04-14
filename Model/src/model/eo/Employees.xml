@@ -20,7 +20,14 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="EMPLOYEES"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.EmployeeId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="FirstName"
     Precision="20"
@@ -32,6 +39,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.FirstName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -45,6 +58,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.LastName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Email"
@@ -59,6 +78,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="25"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.Email_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="PhoneNumber"
@@ -71,6 +96,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.PhoneNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="HireDate"
@@ -79,7 +110,14 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="EMPLOYEES"/>
+    TableName="EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.HireDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="JobId"
     IsNotNull="true"
@@ -92,6 +130,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.JobId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Salary"
@@ -101,7 +145,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="EMPLOYEES"/>
+    TableName="EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.Salary_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CommissionPct"
     Precision="2"
@@ -110,7 +161,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="EMPLOYEES"/>
+    TableName="EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.CommissionPct_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ManagerId"
     Precision="6"
@@ -119,7 +177,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="EMPLOYEES"/>
+    TableName="EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.ManagerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="DepartmentId"
     Precision="4"
@@ -128,7 +193,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="EMPLOYEES"/>
+    TableName="EMPLOYEES">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Employees.DepartmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Departments"
     Association="model.asso.DeptMgrFkAssoc"
@@ -255,4 +327,8 @@
       <Item Value="model.eo.Employees.ManagerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

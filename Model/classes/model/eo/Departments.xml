@@ -20,7 +20,14 @@
     Type="java.lang.Integer"
     ColumnType="NUMBER"
     TableName="DEPARTMENTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Departments.DepartmentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="DepartmentName"
     IsNotNull="true"
@@ -33,6 +40,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Departments.DepartmentName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ManagerId"
@@ -42,7 +55,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="DEPARTMENTS"/>
+    TableName="DEPARTMENTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Departments.ManagerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="LocationId"
     Precision="4"
@@ -51,7 +71,14 @@
     SQLType="NUMERIC"
     Type="java.lang.Integer"
     ColumnType="NUMBER"
-    TableName="DEPARTMENTS"/>
+    TableName="DEPARTMENTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Departments.LocationId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Employees"
     Association="model.asso.DeptMgrFkAssoc"
@@ -107,4 +134,8 @@
       <Item Value="model.eo.Departments.ManagerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

@@ -30,11 +30,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="VARCHAR2"
     AliasName="EMPLOYEE_ID"
     Expression="EMPLOYEE_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.EmployeeId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -47,11 +49,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="FIRST_NAME"
     Expression="FIRST_NAME"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.FirstName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -64,11 +68,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="LAST_NAME"
     Expression="LAST_NAME"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.LastName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -81,11 +87,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="EMAIL"
     Expression="EMAIL"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.Email_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -98,11 +106,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="PHONE_NUMBER"
     Expression="PHONE_NUMBER"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.PhoneNumber_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -115,11 +125,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="HIRE_DATE"
     Expression="HIRE_DATE"
-    SQLType="CHAR">
+    SQLType="DATE">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.HireDate_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -132,11 +144,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="JOB_ID"
     Expression="JOB_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.JobId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -149,11 +163,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="SALARY"
     Expression="SALARY"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.Salary_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -166,11 +182,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="COMMISIO_PCT"
     Expression="COMMISIO_PCT"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.CommisioPct_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -183,11 +201,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
     Expression="MANAGER_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.ManagerId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -200,11 +220,13 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="DEPARTMENT_ID"
     Expression="DEPARTMENT_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <LABEL
+          ResId="model.rov.EmployeesCustomSearchROV.DepartmentId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

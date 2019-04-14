@@ -14,7 +14,7 @@
                 <af:outputText value="Department" id="ot1" inlineStyle="color:Teal; font-size:large;"/>
                <hr/>
                 <af:spacer width="10" height="10" id="s2"/>
-                <af:panelFormLayout id="pfl1" fieldWidth="30">
+                <af:panelFormLayout id="pfl1" fieldWidth="30" maxColumns="2" rows="1">
                     <af:inputText value="#{bindings.DepartmentId.inputValue}"
                                   label="#{bindings.DepartmentId.hints.label}"
                                   required="#{bindings.DepartmentId.hints.mandatory}"

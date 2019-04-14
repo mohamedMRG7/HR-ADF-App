@@ -4,7 +4,8 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="EmployeesVO" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesVOIterator"/>
+    <iterator Binds="EmployeesVO" RangeSize="25" DataControl="AppModuleDataControl" id="EmployeesVOIterator"
+              StateValidation="false"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="EmployeesVOIterator" id="EmployeeId">
