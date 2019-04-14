@@ -43,16 +43,6 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <action IterBinding="DepartmentsVOIterator" id="Delete" InstanceName="AppModuleDataControl.DepartmentsVO"
             DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentId1">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentName1">
-      <AttrNames>
-        <Item Value="DepartmentName"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="ManagerId1">
       <AttrNames>
         <Item Value="ManagerId"/>
@@ -63,5 +53,12 @@
         <Item Value="LocationId"/>
       </AttrNames>
     </attributeValues>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentId3">
+      <AttrNames>
+        <Item Value="DepartmentId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_DepartmentId"
+          id="DepartmentId2" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

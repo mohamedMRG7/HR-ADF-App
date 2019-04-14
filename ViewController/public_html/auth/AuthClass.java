@@ -42,7 +42,7 @@ public class AuthClass {
         userVO.setNamedWhereClauseParam("P_PASSWORD", getPassword());
         userVO.executeQuery();
 
-        if (userVO.hasNext()) {
+        if (userVO.hasNext()&&(userName!=null||password!=null)) {
             Row row = userVO.next();
             userInfo =
                 new UserData((String) row.getAttribute("UserName"), (String) row.getAttribute("Email"),
@@ -54,6 +54,7 @@ public class AuthClass {
         } else {
             FacesMessage errorMessage =
                 new FacesMessage("Log in error", "User name or password is not correct , please try again");
+            errorMessage.setSeverity(FacesMessage.SEVERITY_FATAL);
             FacesContext.getCurrentInstance().addMessage(null, errorMessage);
             return null;
         }

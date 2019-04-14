@@ -182,17 +182,17 @@ public class MainClass {
         // Add event code here...
 
         /*DepartmentsCustomSearchVO  Binding Attruibutes */
-        String departmentID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID);
-        String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
+        String departmentID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
+      //  String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
         String mangerId = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID);
         String locationID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID);
 
-
+        System.out.println(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
         /*Update employee iterator VO*/
        
         ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
         departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
-        departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
+      //  departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
         departmentVO.setNamedWhereClauseParam("MANGER_ID", convertStringForSearch(mangerId));
         departmentVO.setNamedWhereClauseParam("P_LOCATION_ID", convertStringForSearch(locationID));
 
@@ -292,7 +292,7 @@ public class MainClass {
 
     public static Object getAttributeBindingInputeValue(String bindingAtrrID) {
         BindingContext bContext = BindingContext.getCurrent();
-        BindingContainer bContainer = bContext.getCurrentBindingsEntry();
+        DCBindingContainer bContainer = (DCBindingContainer) bContext.getCurrentBindingsEntry();
         AttributeBinding attr = (AttributeBinding) bContainer.getControlBinding(bindingAtrrID);
         return attr.getInputValue();
     }

@@ -126,8 +126,7 @@ FROM
         Conjunction="AND"
         Value=":P_USER_NAME"
         IsBindVarValue="true"
-        Required="Required"
-        ValidateBindVars="true"/>
+        Required="Optional"/>
       <ViewCriteriaItem
         Name="Password"
         ViewAttribute="Password"
@@ -135,8 +134,7 @@ FROM
         Conjunction="AND"
         Value=":P_PASSWORD"
         IsBindVarValue="true"
-        Required="Required"
-        ValidateBindVars="true"/>
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ResourceBundle>

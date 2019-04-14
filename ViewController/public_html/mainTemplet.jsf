@@ -45,7 +45,7 @@
                              icon="#{resource['images:plus.png']}" action="add"/>
                              
                     <af:spacer width="10" height="10" id="pt_s1"/>
-                    <af:link text="Edite" id="pt_l4" inlineStyle="font-size:large;"
+                    <af:link text="Edit" id="pt_l4" inlineStyle="font-size:large;"
                              icon="#{resource['images:edite.png']}" iconPosition="top" partialTriggers="pt_psl1"
                              partialSubmit="true" actionListener="#{mainBean.edite}"/>
                     <af:spacer width="10" height="10" id="pt_s2"/>
