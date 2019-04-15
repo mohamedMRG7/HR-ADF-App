@@ -1,6 +1,8 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
-                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core"
+                    xmlns:c="http://java.sun.com/jsp/jstl/core">
+    <c:set var="viewcontrollerBundle" value="#{adfBundle['viewcontroller.supPagesTempBundle']}"/>
     <af:xmlContent>
         <afc:component>
             <afc:description/>
@@ -23,14 +25,11 @@
                         inlineStyle="margin:20px; border-radius:10px 10px 10px 10px / 10px 10px 10px 10px ; background-color:White;">
         <af:gridRow marginTop="5px" height="30px" id="pt_gr1">
             <af:gridCell marginStart="5px" width="30%" id="pt_gc1" halign="center" valign="middle">
-                <af:link text="Back" id="pt_l1" inlineStyle="font-size:large;"
+                <af:link text="#{viewcontrollerBundle.Back}" id="pt_l1" inlineStyle="font-size:large;"
                          icon="#{resource['images:previous.png']}" action="back" immediate="true"/>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc2" halign="end" valign="middle">
-                <af:selectOneChoice label="Language" id="pt_soc1" inlineStyle="margin-left:10px; margin-right:10px;">
-                    <af:selectItem label="Arabic" value="ar" id="pt_si1"/>
-                    <af:selectItem label="English" value="en" id="pt_si2"/>
-                </af:selectOneChoice>
+                <af:link text="#{localizationBean.language}" id="pt_l2"/>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr2">

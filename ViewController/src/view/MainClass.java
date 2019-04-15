@@ -48,6 +48,8 @@ public class MainClass {
             searchViewEnabled = (Boolean) getSessionVariable("searchViewEnabled");
         }
         userData = (UserData) getSessionVariable(AuthFilter.USER_INFO_SESSION_KEY);
+        if(getSessionVariable("lang")!=null)
+        LocalizationClass.changeLange(getSessionVariable("lang").toString());
     }
 
 

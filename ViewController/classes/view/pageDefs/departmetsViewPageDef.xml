@@ -40,7 +40,6 @@
       </AttrNames>
     </attributeValues>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <action IterBinding="DepartmentsVOIterator" id="Delete" InstanceName="AppModuleDataControl.DepartmentsVO"
             DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="ManagerId1">

@@ -2,6 +2,8 @@ package auth;
 
 import java.io.IOException;
 
+import java.util.Locale;
+
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
@@ -10,6 +12,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import view.LocalizationClass;
+import view.MainClass;
 
 public class AuthFilter implements Filter {
     @Override
@@ -31,7 +36,18 @@ public class AuthFilter implements Filter {
         String reqPageName = request.getPathInfo();
       
         Boolean isLogedIn = (Boolean) request.getSession(true).getAttribute(LOG_IN_SESSION_KEY);
+        
+        /*   
+        String lang = (String) request.getSession(true).getAttribute("lang"); 
+        if(lang==null)
+        {
+            lang=request.getLocale().toString();
+        }
        
+      response.setLocale(new Locale("ar"));
+        System.out.println(response.getLocale());
+        System.out.println(request.getLocale());
+*/
         //if its the first session for the user make isLogIn=false insted of null
         if (isLogedIn == null)
             isLogedIn = false;
