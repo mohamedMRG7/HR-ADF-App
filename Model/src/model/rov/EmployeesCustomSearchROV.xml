@@ -18,6 +18,94 @@
         ResId="model.rov.EmployeesCustomSearchROV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <ViewAccessor
+    Name="EmployeesView1"
+    ViewObjectName="model.vo.EmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobsROV1"
+    ViewObjectName="model.rov.JobsROV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartmentsView1"
+    ViewObjectName="model.vo.DepartmentsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_EmployeeId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="hide"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="JobsROV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ManagerId"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <SQLQuery><![CDATA[SELECT '' EMPLOYEE_ID, '' FIRST_NAME,'' LAST_NAME ,'' EMAIL,'' PHONE_NUMBER 
 ,'' HIRE_DATE,'' JOB_ID,'' SALARY,'' COMMISIO_PCT,'' MANAGER_ID,'' DEPARTMENT_ID 
 FROM DUAL]]></SQLQuery>
@@ -30,13 +118,16 @@ FROM DUAL]]></SQLQuery>
     ColumnType="VARCHAR2"
     AliasName="EMPLOYEE_ID"
     Expression="EMPLOYEE_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_EmployeeId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
           ResId="model.rov.EmployeesCustomSearchROV.EmployeeId_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -144,13 +235,16 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="JOB_ID"
     Expression="JOB_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_JobId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
           ResId="model.rov.EmployeesCustomSearchROV.JobId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -197,17 +291,20 @@ FROM DUAL]]></SQLQuery>
     IsPersistent="false"
     PrecisionRule="true"
     Precision="32"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
     Expression="MANAGER_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_ManagerId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
           ResId="model.rov.EmployeesCustomSearchROV.ManagerId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -216,17 +313,20 @@ FROM DUAL]]></SQLQuery>
     IsPersistent="false"
     PrecisionRule="true"
     Precision="32"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="CHAR"
     AliasName="DEPARTMENT_ID"
     Expression="DEPARTMENT_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_DepartmentId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
         <LABEL
           ResId="model.rov.EmployeesCustomSearchROV.DepartmentId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

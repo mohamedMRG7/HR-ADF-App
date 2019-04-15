@@ -12,7 +12,6 @@
   BindingStyle="OracleName">
   <Attribute
     Name="DepartmentId"
-    IsNotNull="true"
     Precision="4"
     Scale="0"
     ColumnName="DEPARTMENT_ID"
@@ -21,6 +20,8 @@
     ColumnType="NUMBER"
     TableName="DEPARTMENTS"
     PrimaryKey="true">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[(new oracle.jbo.server.SequenceImpl("DEPARTMENTS_SEQ",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

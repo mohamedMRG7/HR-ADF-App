@@ -21,6 +21,8 @@
     ColumnType="NUMBER"
     TableName="EMPLOYEES"
     PrimaryKey="true">
+    <TransientExpression
+      trustMode="trusted"><![CDATA[(new oracle.jbo.server.SequenceImpl("DEPARTMENTS_SEQ",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

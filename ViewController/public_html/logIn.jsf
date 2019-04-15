@@ -21,26 +21,28 @@
                     <af:gridCell width="100%" halign="center" valign="middle" id="gc3"
                                  inlineStyle="background-color:white; border-radius:5px 5px 5px 5px;">
                         <!-- Content -->
-                        <af:image id="i1"
-                                  inlineStyle="margin-left:28%; margin-top:30px; margin-bottom:100px; width:50%;"
-                                  source="#{resource['images:hr.png']}"/>
-                        <af:panelFormLayout id="pfl1">
-                            <f:facet name="footer">
-                                <af:panelGroupLayout id="pgl2" layout="horizontal" inlineStyle="margin-bottom:20px;">
-                                    <af:spacer width="100" height="10" id="s1"/>
-                                    <af:link text="#{viewcontrollerBundle.Login}" id="l1" icon="#{resource['images:login.png']}"
-                                             iconPosition="top" inlineStyle="font-size:small;"
-                                             action="#{authBean.logIn}"/>
-                                </af:panelGroupLayout>
-                            </f:facet>
-                            <af:inputText label="#{viewcontrollerBundle.UserName}" id="it1"
-                                          inlineStyle="margin-left:30px; margin-right:30px;"
-                                          value="#{authBean.userName}" required="true"/>
-                            <af:inputText label="#{viewcontrollerBundle.Password}" id="it2"
-                                          inlineStyle="margin-left:30px; margin-right:30px; margin-top:10px;"
-                                          value="#{authBean.password}" secret="true" required="true"/>
-                            <af:spacer width="10" height="10" id="s2"/>
-                        </af:panelFormLayout>
+                        <af:panelGroupLayout id="pgl3" halign="center" valign="middle" layout="vertical">
+                            <af:image id="i1"
+                                      inlineStyle=" margin-top:30px; margin-bottom:100px; width:50%;"
+                                      source="#{resource['images:logo.png']}"/>
+                            <af:panelFormLayout id="pfl1">
+                                <f:facet name="footer">
+                                    <af:panelGroupLayout id="pgl2" layout="horizontal" inlineStyle="margin-bottom:20px;"
+                                                         halign="center">
+                                        <af:link text="#{viewcontrollerBundle.Login}" id="l1"
+                                                 icon="#{resource['images:login.png']}" iconPosition="top"
+                                                 inlineStyle="font-size:small;" action="#{authBean.logIn}"/>
+                                    </af:panelGroupLayout>
+                                </f:facet>
+                                <af:inputText label="#{viewcontrollerBundle.UserName}" id="it1"
+                                              inlineStyle="margin-left:30px;" value="#{authBean.userName}"
+                                              required="true"/>
+                                <af:inputText label="#{viewcontrollerBundle.Password}" id="it2"
+                                              inlineStyle="margin-left:30px; margin-top:10px;"
+                                              value="#{authBean.password}" secret="true" required="true"/>
+                                <af:spacer width="10" height="10" id="s2"/>
+                            </af:panelFormLayout>
+                        </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell width="100px" halign="stretch" valign="stretch" id="gc1"
                                  inlineStyle="background-color:ThreeDLightShadow;">

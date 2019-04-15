@@ -26,10 +26,11 @@
         <af:gridRow marginTop="5px" height="30px" id="pt_gr1">
             <af:gridCell marginStart="5px" width="30%" id="pt_gc1" halign="center" valign="middle">
                 <af:link text="#{viewcontrollerBundle.Back}" id="pt_l1" inlineStyle="font-size:large;"
-                         icon="#{resource['images:previous.png']}" action="back" immediate="true"/>
+                         icon="#{resource['images:previous.png']}" action="back" immediate="true" iconPosition="top"/>
             </af:gridCell>
             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="pt_gc2" halign="end" valign="middle">
                 <af:link text="#{localizationBean.language}" id="pt_l2"/>
+                <af:spacer width="50" height="10" id="pt_s1"/>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="100%" marginBottom="5px" id="pt_gr2">

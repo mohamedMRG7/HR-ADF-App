@@ -22,6 +22,14 @@
     Name="DepartmentsView1"
     ViewObjectName="model.vo.DepartmentsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmployeesView1"
+    ViewObjectName="model.vo.EmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LocationsROV1"
+    ViewObjectName="model.rov.LocationsROV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DepartmentId"
     ListVOName="DepartmentsView1"
@@ -32,11 +40,54 @@
       <Item Value="DepartmentId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="DepartmentId"/>
+      <Item Value="DepartmentName"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentId"/>
       <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria
+      Hint="hide"/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="LocationsROV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="City"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -51,18 +102,18 @@
     AliasName="DEPARTMENT_ID"
     Expression="DEPARTMENT_ID"
     SQLType="INTEGER"
-    LOVName="LOV_DepartmentId"
-    Passivate="true">
+    Passivate="true"
+    LOVName="LOV_DepartmentId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
-        <CONTROLTYPE
-          Value="choice"/>
         <AUTOSUBMIT
           Value="true"/>
         <LABEL
           ResId="model.rov.DepartmentsCustomSearchROV.DepartmentId_LABEL"/>
+        <CONTROLTYPE
+          Value="combo_lov"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -90,17 +141,20 @@
     IsPersistent="false"
     PrecisionRule="true"
     Precision="32"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
     Expression="MANAGER_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_ManagerId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
         <LABEL
           ResId="model.rov.DepartmentsCustomSearchROV.ManagerId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -113,13 +167,16 @@
     ColumnType="CHAR"
     AliasName="LOCATION_ID"
     Expression="LOCATION_ID"
-    SQLType="VARCHAR">
+    SQLType="VARCHAR"
+    LOVName="LOV_LocationId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="30"/>
         <LABEL
           ResId="model.rov.DepartmentsCustomSearchROV.LocationId_LABEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

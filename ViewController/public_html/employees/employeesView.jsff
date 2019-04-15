@@ -121,13 +121,16 @@
                 <af:outputText value="#{viewcontrollerBundle1.SEARCH}" id="ot7" inlineStyle="color:Teal; font-size:large;"/>
                 <af:spacer width="10" height="10" id="s8"/>
                 <af:panelFormLayout id="pfl3" maxColumns="3" rows="2">
-                    <af:inputText value="#{bindings.EmployeeId1.inputValue}" label="#{bindings.EmployeeId1.hints.label}"
-                                  required="#{bindings.EmployeeId1.hints.mandatory}"
-                                  columns="#{bindings.EmployeeId1.hints.displayWidth}"
-                                  maximumLength="#{bindings.EmployeeId1.hints.precision}"
-                                  shortDesc="#{bindings.EmployeeId1.hints.tooltip}" id="it9">
+                    <af:inputListOfValues id="employeeId1Id"
+                                          popupTitle="Search and Select: #{bindings.EmployeeId1.hints.label}"
+                                          value="#{bindings.EmployeeId1.inputValue}"
+                                          label="#{bindings.EmployeeId1.hints.label}"
+                                          model="#{bindings.EmployeeId1.listOfValuesModel}"
+                                          required="#{bindings.EmployeeId1.hints.mandatory}"
+                                          columns="#{bindings.EmployeeId1.hints.displayWidth}"
+                                          shortDesc="#{bindings.EmployeeId1.hints.tooltip}">
                         <f:validator binding="#{bindings.EmployeeId1.validator}"/>
-                    </af:inputText>
+                    </af:inputListOfValues>
                     <af:inputText value="#{bindings.FirstName1.inputValue}" label="#{bindings.FirstName1.hints.label}"
                                   required="#{bindings.FirstName1.hints.mandatory}"
                                   columns="#{bindings.FirstName1.hints.displayWidth}"
@@ -164,13 +167,12 @@
                         <f:validator binding="#{bindings.HireDate1.validator}"/>
                         <af:convertDateTime pattern="#{bindings.HireDate1.format}"/>
                     </af:inputDate>
-                    <af:inputText value="#{bindings.JobId1.inputValue}" label="#{bindings.JobId1.hints.label}"
-                                  required="#{bindings.JobId1.hints.mandatory}"
-                                  columns="#{bindings.JobId1.hints.displayWidth}"
-                                  maximumLength="#{bindings.JobId1.hints.precision}"
-                                  shortDesc="#{bindings.JobId1.hints.tooltip}" id="it36">
+                    <af:selectOneChoice value="#{bindings.JobId1.inputValue}" label="#{bindings.JobId1.label}"
+                                        required="#{bindings.JobId1.hints.mandatory}"
+                                        shortDesc="#{bindings.JobId1.hints.tooltip}" id="soc1">
+                        <f:selectItems value="#{bindings.JobId1.items}" id="si1"/>
                         <f:validator binding="#{bindings.JobId1.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                     <af:inputText value="#{bindings.Salary1.inputValue}" label="#{bindings.Salary1.hints.label}"
                                   required="#{bindings.Salary1.hints.mandatory}"
                                   columns="#{bindings.Salary1.hints.displayWidth}"
@@ -185,21 +187,19 @@
                                   shortDesc="#{bindings.CommisioPct.hints.tooltip}" id="it38">
                         <f:validator binding="#{bindings.CommisioPct.validator}"/>
                     </af:inputText>
-                    <af:inputText value="#{bindings.ManagerId1.inputValue}" label="#{bindings.ManagerId1.hints.label}"
-                                  required="#{bindings.ManagerId1.hints.mandatory}"
-                                  columns="#{bindings.ManagerId1.hints.displayWidth}"
-                                  maximumLength="#{bindings.ManagerId1.hints.precision}"
-                                  shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="it39">
+                    <af:selectOneChoice value="#{bindings.ManagerId1.inputValue}" label="#{bindings.ManagerId1.label}"
+                                        required="#{bindings.ManagerId1.hints.mandatory}"
+                                        shortDesc="#{bindings.ManagerId1.hints.tooltip}" id="soc2">
+                        <f:selectItems value="#{bindings.ManagerId1.items}" id="si2"/>
                         <f:validator binding="#{bindings.ManagerId1.validator}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.DepartmentId1.inputValue}"
-                                  label="#{bindings.DepartmentId1.hints.label}"
-                                  required="#{bindings.DepartmentId1.hints.mandatory}"
-                                  columns="#{bindings.DepartmentId1.hints.displayWidth}"
-                                  maximumLength="#{bindings.DepartmentId1.hints.precision}"
-                                  shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="it40">
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.DepartmentId1.inputValue}"
+                                        label="#{bindings.DepartmentId1.label}"
+                                        required="#{bindings.DepartmentId1.hints.mandatory}"
+                                        shortDesc="#{bindings.DepartmentId1.hints.tooltip}" id="soc3">
+                        <f:selectItems value="#{bindings.DepartmentId1.items}" id="si3"/>
                         <f:validator binding="#{bindings.DepartmentId1.validator}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                 </af:panelFormLayout>
                 <af:panelGroupLayout id="pgl6" layout="horizontal">
                     <af:spacer width="500" height="10" id="s10"/>

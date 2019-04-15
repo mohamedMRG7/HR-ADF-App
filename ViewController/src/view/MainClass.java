@@ -180,7 +180,7 @@ public class MainClass {
         setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
 
-        getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR).executeQuery();
+        departmentSearch(null);
     }
 
     public void departmentSearch(ActionEvent actionEvent) {
@@ -188,16 +188,16 @@ public class MainClass {
 
         /*DepartmentsCustomSearchVO  Binding Attruibutes */
         String departmentID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
-        //  String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
-        String mangerId = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID);
+        String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
+        String mangerId = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID));
         String locationID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID);
 
-        System.out.println(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
         /*Update employee iterator VO*/
+        System.out.println(mangerId);
 
         ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
         departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
-        //  departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
+        departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
         departmentVO.setNamedWhereClauseParam("MANGER_ID", convertStringForSearch(mangerId));
         departmentVO.setNamedWhereClauseParam("P_LOCATION_ID", convertStringForSearch(locationID));
 
@@ -218,8 +218,8 @@ public class MainClass {
         String jobId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.JOB_ID);
         String salary = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.SALARY);
         String commition = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.COMMITON_PCT);
-        String managerId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID);
-        String departmentID = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.DEPARTMENT_ID);
+        String managerId = String.valueOf(getAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID));
+        String departmentID = String.valueOf(getAttributeBindingInputeValue(EmployeeBindingIDS.DEPARTMENT_ID));
 
         /*Update employee iterator VO*/
         ViewObject employeeVO = getViewObjectFromIterator(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR);
@@ -251,7 +251,8 @@ public class MainClass {
         setAttributeBindingInputeValue(EmployeeBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(EmployeeBindingIDS.PHONE_NUMBER, null);
         setAttributeBindingInputeValue(EmployeeBindingIDS.SALARY, null);
-        getViewObjectFromIterator(EmployeeBindingIDS.EMPLOYEEVO_ITERATOR).executeQuery();
+        
+        employeesSearch(null);
 
     }
 

@@ -85,11 +85,6 @@
             DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
     <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
-    <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="EmployeeId1">
-      <AttrNames>
-        <Item Value="EmployeeId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="FirstName1">
       <AttrNames>
         <Item Value="FirstName"/>
@@ -115,11 +110,6 @@
         <Item Value="HireDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="JobId1">
-      <AttrNames>
-        <Item Value="JobId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="Salary1">
       <AttrNames>
         <Item Value="Salary"/>
@@ -130,15 +120,13 @@
         <Item Value="CommisioPct"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="ManagerId1">
-      <AttrNames>
-        <Item Value="ManagerId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmployeesCustomSearchROVIterator" id="DepartmentId1">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
+    <listOfValues IterBinding="EmployeesCustomSearchROVIterator" StaticList="false" Uses="LOV_EmployeeId"
+                  id="EmployeeId1"/>
+    <list IterBinding="EmployeesCustomSearchROVIterator" StaticList="false" Uses="LOV_JobId" id="JobId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesCustomSearchROVIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesCustomSearchROVIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

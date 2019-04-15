@@ -43,22 +43,21 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <action IterBinding="DepartmentsVOIterator" id="Delete" InstanceName="AppModuleDataControl.DepartmentsVO"
             DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
-    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="ManagerId1">
-      <AttrNames>
-        <Item Value="ManagerId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="LocationId1">
-      <AttrNames>
-        <Item Value="LocationId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentId3">
       <AttrNames>
         <Item Value="DepartmentId"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_DepartmentId"
-          id="DepartmentId2" DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <listOfValues IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_DepartmentId"
+                  id="DepartmentId1"/>
+    <attributeValues IterBinding="DepartmentsCustomSearchROVIterator" id="DepartmentName1">
+      <AttrNames>
+        <Item Value="DepartmentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_LocationId" id="LocationId1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -57,6 +57,94 @@
     Name="P_SALARY"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="EmployeesView1"
+    ViewObjectName="model.vo.EmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="DepartmentsView1"
+    ViewObjectName="model.vo.DepartmentsView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="JobsROV1"
+    ViewObjectName="model.rov.JobsROV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_EmployeeId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="EmployeeId"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DepartmentId"
+    ListVOName="DepartmentsView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DepartmentId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartmentName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_JobId"
+    ListVOName="JobsROV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="JobId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="JobTitle"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Employees"
     Entity="model.eo.Employees"/>
@@ -66,11 +154,15 @@
     PrecisionRule="true"
     EntityAttrName="EmployeeId"
     EntityUsage="Employees"
-    AliasName="EMPLOYEE_ID">
+    AliasName="EMPLOYEE_ID"
+    IsUpdateable="false"
+    LOVName="LOV_EmployeeId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -149,11 +241,14 @@
     PrecisionRule="true"
     EntityAttrName="JobId"
     EntityUsage="Employees"
-    AliasName="JOB_ID">
+    AliasName="JOB_ID"
+    LOVName="LOV_JobId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -188,11 +283,14 @@
     PrecisionRule="true"
     EntityAttrName="ManagerId"
     EntityUsage="Employees"
-    AliasName="MANAGER_ID">
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
@@ -201,11 +299,14 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Employees"
-    AliasName="DEPARTMENT_ID">
+    AliasName="DEPARTMENT_ID"
+    LOVName="LOV_DepartmentId">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
+        <CONTROLTYPE
+          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

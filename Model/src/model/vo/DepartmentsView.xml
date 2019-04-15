@@ -29,6 +29,53 @@
     Name="MANGER_ID"
     Kind="viewcriteria"
     Type="java.lang.String"/>
+  <ViewAccessor
+    Name="EmployeesView1"
+    ViewObjectName="model.vo.EmployeesView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="LocationsROV1"
+    ViewObjectName="model.rov.LocationsROV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ManagerId"
+    ListVOName="EmployeesView1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ManagerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="EmployeeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_LocationId"
+    ListVOName="LocationsROV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LocationId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="LocationId"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Departments"
     Entity="model.eo.Departments"/>
@@ -38,7 +85,8 @@
     PrecisionRule="true"
     EntityAttrName="DepartmentId"
     EntityUsage="Departments"
-    AliasName="DEPARTMENT_ID"/>
+    AliasName="DEPARTMENT_ID"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="DepartmentName"
     IsNotNull="true"
@@ -58,13 +106,29 @@
     PrecisionRule="true"
     EntityAttrName="ManagerId"
     EntityUsage="Departments"
-    AliasName="MANAGER_ID"/>
+    AliasName="MANAGER_ID"
+    LOVName="LOV_ManagerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LocationId"
     PrecisionRule="true"
     EntityAttrName="LocationId"
     EntityUsage="Departments"
-    AliasName="LOCATION_ID"/>
+    AliasName="LOCATION_ID"
+    LOVName="LOV_LocationId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewCriteria
     Name="DepartmentsViewCriteria"
     ViewObjectName="model.vo.DepartmentsView"
