@@ -241,7 +241,6 @@
                </list>
             </hash>
             <hash>
-               <url n="content-folder-url" path="public_html/META-INF/resources/images/"/>
                <list n="pattern-filters">
                   <string v="+**"/>
                </list>
@@ -742,6 +741,9 @@
       </list>
    </hash>
    <hash n="ResourceBundleOptions">
-      <value n="BundleCreationPolicy" v="2"/>
+      <value n="BundleAutoSynchronize" v="true"/>
+      <value n="BundleCreationPolicy" v="0"/>
+      <value n="DefaultBundleTypeId" v="listResourceBundleId"/>
+      <value n="WarnAboutHardcodedTranslatableStrings" v="false"/>
    </hash>
 </jpr:project>
