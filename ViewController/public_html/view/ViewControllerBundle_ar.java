@@ -37,7 +37,9 @@ public class ViewControllerBundle_ar extends ListResourceBundle {
         //
         { "EMPLOYEE", "الموظف" },
         //
-        { "ADD_EMPLOYEE", "اضافه موظف" }
+        { "ADD_EMPLOYEE", "اضافه موظف" },
+        //
+        { "SEARCH_AND_SELECT", "ابحث و اختار" }
 
 
     };

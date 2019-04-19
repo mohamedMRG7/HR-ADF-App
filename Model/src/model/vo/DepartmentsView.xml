@@ -171,22 +171,6 @@
         Value=":P_DEPT_NAME"
         IsBindVarValue="true"
         Required="Optional"/>
-      <ViewCriteriaItem
-        Name="ManagerId"
-        ViewAttribute="ManagerId"
-        Operator="="
-        Conjunction="AND"
-        Value=":MANGER_ID"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="LocationId"
-        ViewAttribute="LocationId"
-        Operator="="
-        Conjunction="AND"
-        Value=":P_LOCATION_ID"
-        IsBindVarValue="true"
-        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor

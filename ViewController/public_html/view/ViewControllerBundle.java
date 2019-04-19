@@ -37,7 +37,10 @@ public class ViewControllerBundle extends ListResourceBundle {
         //
         { "EMPLOYEE", "Employee" },
         //
-        { "ADD_EMPLOYEE", "Add employee" }
+        { "ADD_EMPLOYEE", "Add employee" },
+        //
+        { "SEARCH_AND_SELECT", "Search and select" }
+
 
 
     };

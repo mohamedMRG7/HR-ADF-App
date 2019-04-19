@@ -73,7 +73,7 @@
                           rows="#{bindings.DepartmentsVO.rangeSize}"
                           emptyText="#{bindings.DepartmentsVO.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="1" fetchSize="#{bindings.DepartmentsVO.rangeSize}" id="t1"
-                          partialTriggers="::l2">
+                          partialTriggers="::l2" columnStretching="column:c2">
                     <af:column headerText="#{bindings.DepartmentsVO.hints.DepartmentId.label}" id="c1">
                         <af:outputText value="#{row.DepartmentId}"
                                        shortDesc="#{bindings.DepartmentsVO.hints.DepartmentId.tooltip}" id="ot2">

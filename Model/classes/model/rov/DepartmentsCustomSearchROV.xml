@@ -18,6 +18,14 @@
         ResId="model.rov.DepartmentsCustomSearchROV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="P_ID"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
+  <Variable
+    Name="P_Name"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="DepartmentsView1"
     ViewObjectName="model.vo.DepartmentsView"
@@ -52,7 +60,7 @@
       <Item Value="DepartmentName"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="hide"/>
+      Name="DepartmentsViewCriteria"/>
   </ListBinding>
   <ListBinding
     Name="LOV_ManagerId"
@@ -145,7 +153,7 @@
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
     Expression="MANAGER_ID"
-    SQLType="VARCHAR"
+    SQLType="INTEGER"
     LOVName="LOV_ManagerId">
     <Properties>
       <SchemaBasedProperties>
@@ -180,6 +188,50 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="DepartmentsCustomSearchROVCriteria"
+    ViewObjectName="model.rov.DepartmentsCustomSearchROV"
+    Conjunction="AND">
+    <Properties>
+      <CustomProperties>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="DepartmentsCustomSearchROVCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="DepartmentsCustomSearchROVCriteria_DepartmentsCustomSearchROVCriteria_row_0_DepartmentId"
+        ViewAttribute="DepartmentId"
+        Operator="="
+        Conjunction="AND"
+        Value=":P_ID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DepartmentsCustomSearchROVCriteria_DepartmentsCustomSearchROVCriteria_row_0_DepartmentName"
+        ViewAttribute="DepartmentName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=":P_Name"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

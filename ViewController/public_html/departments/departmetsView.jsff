@@ -71,7 +71,7 @@
                 <af:spacer width="10" height="10" id="s8"/>
                 <af:panelFormLayout id="pfl3" maxColumns="3" rows="2">
                     <af:inputListOfValues id="departmentId1Id"
-                                          popupTitle="Search and Select: #{bindings.DepartmentId1.hints.label}"
+                                          popupTitle="#{viewcontrollerBundle1.SEARCH_AND_SELECT} : #{bindings.DepartmentId1.hints.label}"
                                           value="#{bindings.DepartmentId1.inputValue}"
                                           label="#{bindings.DepartmentId1.hints.label}"
                                           model="#{bindings.DepartmentId1.listOfValuesModel}"
