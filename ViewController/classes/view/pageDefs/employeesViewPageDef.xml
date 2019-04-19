@@ -128,5 +128,11 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="EmployeesCustomSearchROVIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_JobId" id="JobId2" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

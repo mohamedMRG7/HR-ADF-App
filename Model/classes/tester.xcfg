@@ -61,7 +61,13 @@
          <Tester FullProxyInterfaceName="model.module.common.AppModule"/>
          <Custom ns0:JDBCDataSource="java:comp/env/jdbc/HRDS" ns0:_testers_credentials_needed="false" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
       </AppModuleConfig>
-      <AppModuleConfig name="16A222A920C" JDBCName="HR" DeployPlatform="LOCAL" jbo.project="model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="AppModuleLocal" ApplicationName="model.module.AppModule" DBconnection="java:comp/env/jdbc/HRDS">
+      <AppModuleConfig name="16A3739F312" IsLazyLoadingTrue="true" DBconnection="java:comp/env/jdbc/HRDS" ApplicationName="model.module.AppModule" jbo.project="model.Model" BC4JConfigName="AppModuleLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" DeployPlatform="LOCAL" JDBCName="HR">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="OracleApps" jbo.locking.mode="optimistic"/>
+         <Security AppModuleJndiName="model.module.AppModule"/>
+         <Tester FullProxyInterfaceName="model.module.common.AppModule"/>
+         <Custom ns0:LastUsedConfiguration="AppModuleLocal" ns0:ns0="http://xmlns.oracle.com/bc4j/configuration" ns0:JDBCDataSource="java:comp/env/jdbc/HRDS" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="16A379F181B" JDBCName="HR" DeployPlatform="LOCAL" jbo.project="model.Model" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="AppModuleLocal" ApplicationName="model.module.AppModule" DBconnection="java:comp/env/jdbc/HRDS">
          <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" jbo.SQLBuilder="Oracle"/>
          <Security AppModuleJndiName="model.module.AppModule"/>
          <Tester FullProxyInterfaceName="model.module.common.AppModule"/>

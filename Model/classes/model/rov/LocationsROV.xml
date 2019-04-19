@@ -32,11 +32,11 @@ FROM
     IsUpdateable="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.lang.String"
+    Type="java.lang.Integer"
     ColumnType="INTEGER"
     AliasName="LOCATION_ID"
     Expression="LOCATION_ID"
-    SQLType="NUMERIC"/>
+    SQLType="INTEGER"/>
   <ViewAttribute
     Name="StreetAddress"
     IsUpdateable="false"
@@ -107,7 +107,7 @@ FROM
     ColumnType="CHAR"
     AliasName="COUNTRY_ID"
     Expression="COUNTRY_ID"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="2"/>
     </DesignTime>

@@ -16,16 +16,7 @@
                 <af:outputText value="#{viewcontrollerBundle1.DEPARTMENT}" id="ot1" inlineStyle="color:Teal; font-size:large;"/>
                <hr/>
                 <af:spacer width="10" height="10" id="s2"/>
-                <af:panelFormLayout id="pfl1" fieldWidth="30" maxColumns="2" rows="1">
-                    <af:inputText value="#{bindings.DepartmentId.inputValue}"
-                                  label="#{bindings.DepartmentId.hints.label}"
-                                  required="#{bindings.DepartmentId.hints.mandatory}"
-                                  columns="#{bindings.DepartmentId.hints.displayWidth}"
-                                  maximumLength="#{bindings.DepartmentId.hints.precision}"
-                                  shortDesc="#{bindings.DepartmentId.hints.tooltip}" id="it1">
-                        <f:validator binding="#{bindings.DepartmentId.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.DepartmentId.format}"/>
-                    </af:inputText>
+                <af:panelFormLayout id="pfl1" maxColumns="2" rows="1">
                     <af:inputText value="#{bindings.DepartmentName.inputValue}"
                                   label="#{bindings.DepartmentName.hints.label}"
                                   required="#{bindings.DepartmentName.hints.mandatory}"
@@ -34,28 +25,24 @@
                                   shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it2">
                         <f:validator binding="#{bindings.DepartmentName.validator}"/>
                     </af:inputText>
-                    <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
-                                  required="#{bindings.ManagerId.hints.mandatory}"
-                                  columns="#{bindings.ManagerId.hints.displayWidth}"
-                                  maximumLength="#{bindings.ManagerId.hints.precision}"
-                                  shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it3">
+                    <af:selectOneChoice value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.label}"
+                                        required="#{bindings.ManagerId.hints.mandatory}"
+                                        shortDesc="#{bindings.ManagerId.hints.tooltip}" id="soc1">
+                        <f:selectItems value="#{bindings.ManagerId.items}" id="si1"/>
                         <f:validator binding="#{bindings.ManagerId.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
-                    </af:inputText>
-                    <af:inputText value="#{bindings.LocationId.inputValue}" label="#{bindings.LocationId.hints.label}"
-                                  required="#{bindings.LocationId.hints.mandatory}"
-                                  columns="#{bindings.LocationId.hints.displayWidth}"
-                                  maximumLength="#{bindings.LocationId.hints.precision}"
-                                  shortDesc="#{bindings.LocationId.hints.tooltip}" id="it4">
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.LocationId.inputValue}" label="#{bindings.LocationId.label}"
+                                        required="#{bindings.LocationId.hints.mandatory}"
+                                        shortDesc="#{bindings.LocationId.hints.tooltip}" id="soc2">
+                        <f:selectItems value="#{bindings.LocationId.items}" id="si2"/>
                         <f:validator binding="#{bindings.LocationId.validator}"/>
-                        <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                 </af:panelFormLayout>
                 <af:spacer width="10" height="10" id="s3"/>
                 <af:panelGroupLayout id="pgl2">
                     <af:spacer width="10" height="10" id="s4"/>
                     <af:link id="l2" icon="#{resource['images:plus.png']}" iconPosition="top"
-                             actionListener="#{bindings.Create.execute}" disabled="#{!bindings.Create.enabled}"
+                             actionListener="#{bindings.CreateInsert.execute}" disabled="#{!bindings.Create.enabled}"
                              text="#{viewcontrollerBundle1.ADD}"/>
                     <af:spacer width="100" height="10" id="s5"/>
                     <af:link id="l3" icon="#{resource['images:save.png']}" iconPosition="top"
@@ -64,7 +51,8 @@
                     <af:spacer width="10" height="10" id="s6"/>
                     <af:link text="#{viewcontrollerBundle1.ROLL_BACK}" id="l4" iconPosition="top"
                              actionListener="#{bindings.Rollback.execute}" disabled="#{!bindings.Rollback.enabled}"
-                             immediate="true" icon="#{resource['images:rollback.png']}">
+                             immediate="true" icon="#{resource['images:rollback.png']}"
+                             action="#{bindings.CreateInsert.execute}">
                         <af:resetActionListener/>
                     </af:link>
                 </af:panelGroupLayout>

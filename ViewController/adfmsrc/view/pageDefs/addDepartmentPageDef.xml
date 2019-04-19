@@ -21,25 +21,16 @@
     <action IterBinding="DepartmentsVOIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <attributeValues IterBinding="DepartmentsVOIterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="DepartmentsVOIterator" id="DepartmentName">
       <AttrNames>
         <Item Value="DepartmentName"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="DepartmentsVOIterator" id="ManagerId">
-      <AttrNames>
-        <Item Value="ManagerId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="DepartmentsVOIterator" id="LocationId">
-      <AttrNames>
-        <Item Value="LocationId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="DepartmentsVOIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DepartmentsVOIterator" StaticList="false" Uses="LOV_LocationId" id="LocationId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="DepartmentsVOIterator" id="CreateInsert" InstanceName="AppModuleDataControl.DepartmentsVO"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

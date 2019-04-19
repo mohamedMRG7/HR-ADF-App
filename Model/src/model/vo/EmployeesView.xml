@@ -70,25 +70,6 @@
     ViewObjectName="model.rov.JobsROV"
     RowLevelBinds="true"/>
   <ListBinding
-    Name="LOV_EmployeeId"
-    ListVOName="EmployeesView1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="EmployeeId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="EmployeeId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="EmployeeId"/>
-      <Item Value="LastName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_ManagerId"
     ListVOName="EmployeesView1"
     ListRangeSize="-1"
@@ -155,14 +136,11 @@
     EntityAttrName="EmployeeId"
     EntityUsage="Employees"
     AliasName="EMPLOYEE_ID"
-    IsUpdateable="false"
-    LOVName="LOV_EmployeeId">
+    IsUpdateable="false">
     <Properties>
       <SchemaBasedProperties>
         <DISPLAYWIDTH
           Value="20"/>
-        <CONTROLTYPE
-          Value="choice"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>

@@ -9,10 +9,14 @@
   DBObjectType="table"
   DBObjectName="EMPLOYEES"
   AliasName="Employees"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.eo.EmployeesImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="EmployeeId"
-    IsNotNull="true"
     Precision="6"
     Scale="0"
     ColumnName="EMPLOYEE_ID"
@@ -21,8 +25,6 @@
     ColumnType="NUMBER"
     TableName="EMPLOYEES"
     PrimaryKey="true">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[(new oracle.jbo.server.SequenceImpl("DEPARTMENTS_SEQ",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

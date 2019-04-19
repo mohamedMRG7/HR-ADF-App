@@ -178,23 +178,20 @@
                                       shortDesc="#{bindings.DepartmentName.hints.tooltip}" id="it6">
                             <f:validator binding="#{bindings.DepartmentName.validator}"/>
                         </af:inputText>
-                        <af:inputText value="#{bindings.ManagerId.inputValue}" label="#{bindings.ManagerId.hints.label}"
-                                      required="#{bindings.ManagerId.hints.mandatory}"
-                                      columns="#{bindings.ManagerId.hints.displayWidth}"
-                                      maximumLength="#{bindings.ManagerId.hints.precision}"
-                                      shortDesc="#{bindings.ManagerId.hints.tooltip}" id="it7">
-                            <f:validator binding="#{bindings.ManagerId.validator}"/>
-                            <af:convertNumber groupingUsed="false" pattern="#{bindings.ManagerId.format}"/>
-                        </af:inputText>
-                        <af:inputText value="#{bindings.LocationId.inputValue}"
-                                      label="#{bindings.LocationId.hints.label}"
-                                      required="#{bindings.LocationId.hints.mandatory}"
-                                      columns="#{bindings.LocationId.hints.displayWidth}"
-                                      maximumLength="#{bindings.LocationId.hints.precision}"
-                                      shortDesc="#{bindings.LocationId.hints.tooltip}" id="it8">
-                            <f:validator binding="#{bindings.LocationId.validator}"/>
-                            <af:convertNumber groupingUsed="false" pattern="#{bindings.LocationId.format}"/>
-                        </af:inputText>
+                        <af:selectOneChoice value="#{bindings.ManagerId2.inputValue}"
+                                            label="#{bindings.ManagerId2.label}"
+                                            required="#{bindings.ManagerId2.hints.mandatory}"
+                                            shortDesc="#{bindings.ManagerId2.hints.tooltip}" id="soc3">
+                            <f:selectItems value="#{bindings.ManagerId2.items}" id="si3"/>
+                            <f:validator binding="#{bindings.ManagerId2.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.LocationId2.inputValue}"
+                                            label="#{bindings.LocationId2.label}"
+                                            required="#{bindings.LocationId2.hints.mandatory}"
+                                            shortDesc="#{bindings.LocationId2.hints.tooltip}" id="soc4">
+                            <f:selectItems value="#{bindings.LocationId2.items}" id="si4"/>
+                            <f:validator binding="#{bindings.LocationId2.validator}"/>
+                        </af:selectOneChoice>
                     </af:panelFormLayout>
                     <af:spacer width="10" height="10" id="s6"/>
                     <af:panelGroupLayout id="pgl4" layout="horizontal">
@@ -224,7 +221,7 @@
                           rowBandingInterval="1" selectedRowKeys="#{bindings.DepartmentsVO.collectionModel.selectedRow}"
                           selectionListener="#{bindings.DepartmentsVO.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.DepartmentsVO.rangeSize}" id="t1"
-                          columnStretching="column:c2">
+                          columnStretching="column:c2" scrollPolicy="page">
                     <af:column headerText="#{bindings.DepartmentsVO.hints.DepartmentId.label}" id="c1">
                         <af:outputText value="#{row.DepartmentId}"
                                        shortDesc="#{bindings.DepartmentsVO.hints.DepartmentId.tooltip}" id="ot1">

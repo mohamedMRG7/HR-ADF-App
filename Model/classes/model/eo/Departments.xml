@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="DEPARTMENTS"
   AliasName="Departments"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.eo.DepartmentsImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="DepartmentId"
     Precision="4"
@@ -20,8 +25,6 @@
     ColumnType="NUMBER"
     TableName="DEPARTMENTS"
     PrimaryKey="true">
-    <TransientExpression
-      trustMode="trusted"><![CDATA[(new oracle.jbo.server.SequenceImpl("DEPARTMENTS_SEQ",adf.object.getDBTransaction())).getSequenceNumber()]]></TransientExpression>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

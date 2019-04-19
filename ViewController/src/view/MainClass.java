@@ -7,6 +7,7 @@ import departments.DepartmentBindingIDS;
 
 import employees.EmployeeBindingIDS;
 
+import oracle.jbo.domain.Date;
 import java.util.Locale;
 
 import javax.faces.component.UIComponent;
@@ -176,7 +177,7 @@ public class MainClass {
     public void resetDepartmentSearch(ActionEvent actionEvent) {
         // Add event code here...
         setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID, null);
-        // setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
+        setAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID, null);
         setAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID, null);
 
@@ -190,10 +191,10 @@ public class MainClass {
         String departmentID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_ID));
         String departmentName = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.DEPARTMENT_NAME);
         String mangerId = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.MANAGER_ID));
-        String locationID = (String) getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID);
+        String locationID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID));
 
         /*Update employee iterator VO*/
-        System.out.println(mangerId);
+       
 
         ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
         departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
@@ -214,7 +215,7 @@ public class MainClass {
         String lastName = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.LAST_NAME);
         String email = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.EMAIL);
         String phoneNum = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.PHONE_NUMBER);
-        String hireDate = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.HIRE_DATE);
+        Date hireDate = (Date) getAttributeBindingInputeValue(EmployeeBindingIDS.HIRE_DATE);
         String jobId = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.JOB_ID);
         String salary = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.SALARY);
         String commition = (String) getAttributeBindingInputeValue(EmployeeBindingIDS.COMMITON_PCT);

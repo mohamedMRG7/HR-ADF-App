@@ -59,5 +59,9 @@
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="DepartmentsCustomSearchROVIterator" StaticList="false" Uses="LOV_LocationId" id="LocationId1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DepartmentsVOIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="DepartmentsVOIterator" StaticList="false" Uses="LOV_LocationId" id="LocationId2"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

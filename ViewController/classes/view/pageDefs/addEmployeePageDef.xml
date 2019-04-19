@@ -8,11 +8,26 @@
               StateValidation="false"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="EmployeesVOIterator" id="EmployeeId">
-      <AttrNames>
-        <Item Value="EmployeeId"/>
-      </AttrNames>
-    </attributeValues>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+    <tree IterBinding="EmployeesVOIterator" id="EmployeesVO">
+      <nodeDefinition DefName="model.vo.EmployeesView" Name="EmployeesVO0">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="HireDate"/>
+          <Item Value="JobId"/>
+          <Item Value="Salary"/>
+          <Item Value="CommissionPct"/>
+          <Item Value="ManagerId"/>
+          <Item Value="DepartmentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="EmployeesVOIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
     <attributeValues IterBinding="EmployeesVOIterator" id="FirstName">
       <AttrNames>
         <Item Value="FirstName"/>
@@ -38,11 +53,8 @@
         <Item Value="HireDate"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesVOIterator" id="JobId">
-      <AttrNames>
-        <Item Value="JobId"/>
-      </AttrNames>
-    </attributeValues>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_JobId" id="JobId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="EmployeesVOIterator" id="Salary">
       <AttrNames>
         <Item Value="Salary"/>
@@ -53,35 +65,9 @@
         <Item Value="CommissionPct"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="EmployeesVOIterator" id="ManagerId">
-      <AttrNames>
-        <Item Value="ManagerId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="EmployeesVOIterator" id="DepartmentId">
-      <AttrNames>
-        <Item Value="DepartmentId"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="EmployeesVOIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
-    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
-    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
-    <tree IterBinding="EmployeesVOIterator" id="EmployeesVO">
-      <nodeDefinition DefName="model.vo.EmployeesView" Name="EmployeesVO0">
-        <AttrNames>
-          <Item Value="EmployeeId"/>
-          <Item Value="FirstName"/>
-          <Item Value="LastName"/>
-          <Item Value="Email"/>
-          <Item Value="PhoneNumber"/>
-          <Item Value="HireDate"/>
-          <Item Value="JobId"/>
-          <Item Value="Salary"/>
-          <Item Value="CommissionPct"/>
-          <Item Value="ManagerId"/>
-          <Item Value="DepartmentId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_ManagerId" id="ManagerId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="EmployeesVOIterator" StaticList="false" Uses="LOV_DepartmentId" id="DepartmentId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

@@ -30,9 +30,17 @@
     Name="DepartmentsView1"
     ViewObjectName="model.vo.DepartmentsView"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmployeesROV1"
+    ViewObjectName="model.rov.EmployeesROV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="EmployeesROV2"
+    ViewObjectName="model.rov.EmployeesROV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_EmployeeId"
-    ListVOName="EmployeesView1"
+    ListVOName="EmployeesROV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -48,14 +56,16 @@
       <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria
-      Hint="hide"/>
+      Name="EmployeesROVCriteria"
+      Hint="showAndExecute"/>
   </ListBinding>
   <ListBinding
     Name="LOV_JobId"
     ListVOName="JobsROV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="JobId"/>
     </AttrArray>
@@ -73,8 +83,8 @@
     ListVOName="DepartmentsView1"
     ListRangeSize="-1"
     NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="DepartmentId"/>
     </AttrArray>
@@ -91,17 +101,18 @@
     Name="LOV_ManagerId"
     ListVOName="EmployeesView1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
     <AttrArray Name="AttrNames">
       <Item Value="ManagerId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ManagerId"/>
+      <Item Value="EmployeeId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ManagerId"/>
+      <Item Value="EmployeeId"/>
       <Item Value="LastName"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -295,7 +306,7 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="MANAGER_ID"
     Expression="MANAGER_ID"
-    SQLType="VARCHAR"
+    SQLType="INTEGER"
     LOVName="LOV_ManagerId">
     <Properties>
       <SchemaBasedProperties>
@@ -317,7 +328,7 @@ FROM DUAL]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="DEPARTMENT_ID"
     Expression="DEPARTMENT_ID"
-    SQLType="VARCHAR"
+    SQLType="INTEGER"
     LOVName="LOV_DepartmentId">
     <Properties>
       <SchemaBasedProperties>
