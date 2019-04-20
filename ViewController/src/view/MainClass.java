@@ -48,12 +48,23 @@ public class MainClass {
         if (getSessionVariable("searchViewEnabled") != null) {
             searchViewEnabled = (Boolean) getSessionVariable("searchViewEnabled");
         }
+        //get userInfo
         userData = (UserData) getSessionVariable(AuthFilter.USER_INFO_SESSION_KEY);
+        
+        //get session language if not null and apply it , else maintain the defulte language
         if(getSessionVariable("lang")!=null)
         LocalizationClass.changeLange(getSessionVariable("lang").toString());
     }
 
 
+
+/*
+ * 
+ * 
+ * Getters and setters
+ * 
+ * 
+ * */
     public void setUserData(UserData userData) {
         this.userData = userData;
     }
@@ -136,8 +147,8 @@ public class MainClass {
         //Replace readOnly form with editable form when click on edite button
         setReadOnlyView(false);
         setEdaitableView(true);
-        //Refresh the both department form form
-
+        
+        //Refresh the both department form 
         addPartialTrigger(getEditableForm());
         addPartialTrigger(getReadOnlyForm());
 
@@ -194,8 +205,6 @@ public class MainClass {
         String locationID = String.valueOf(getAttributeBindingInputeValue(DepartmentBindingIDS.LOCATION_ID));
 
         /*Update employee iterator VO*/
-       
-
         ViewObject departmentVO = getViewObjectFromIterator(DepartmentBindingIDS.DEPARTMENTVO_ITERATOR);
         departmentVO.setNamedWhereClauseParam("P_DEPT_ID", convertStringForSearch(departmentID));
         departmentVO.setNamedWhereClauseParam("P_DEPT_NAME", departmentName);
@@ -264,7 +273,7 @@ public class MainClass {
 
 
     public void delete(ActionEvent actionEvent) {
-        // Add event code here...
+        
         excuteBindingOperation("Delete");
         excuteBindingOperation("Commit");
         hidePopUp(getDeletePopUpView());
@@ -290,7 +299,7 @@ public class MainClass {
     public void addPartialTrigger(UIComponent ui) {
         AdfFacesContext.getCurrentInstance().addPartialTarget(ui);
     }
-
+    
     public static void setSessionVariable(String key, Object value) {
         FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put(key, value);
     }
@@ -332,12 +341,6 @@ public class MainClass {
         DCBindingContainer dcContainer = (DCBindingContainer) BindingContext.getCurrent().getCurrentBindingsEntry();
         DCIteratorBinding employeeIterator = (DCIteratorBinding) dcContainer.get(iteratorID);
         ViewObject employeeVO = employeeIterator.getViewObject();
-
-        System.out.println(employeeVO.getWhereClause());
-        /*  for(int i=1; i<=employeeVO.getWhereClauseParams().length;i++)
-        {
-            employeeVO.setWhereClauseParam(i, null);
-        }*/
         return employeeVO;
     }
 

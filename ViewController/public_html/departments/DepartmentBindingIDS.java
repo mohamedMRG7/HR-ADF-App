@@ -1,7 +1,7 @@
 package departments;
 
 public class DepartmentBindingIDS {
-    /*CUSTOM VIEW BINDING ATTRIBUTE*/
+    /*VIEW BINDING ATTRIBUTES*/
     public static final String DEPARTMENT_ID="DepartmentId1";
     public static final String DEPARTMENT_NAME="DepartmentName1";
     public static final String MANAGER_ID="ManagerId1";

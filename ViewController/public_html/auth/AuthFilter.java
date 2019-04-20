@@ -25,6 +25,7 @@ public class AuthFilter implements Filter {
     public static final String LOG_IN_SESSION_KEY = "isLogedIn";
     public static final String USER_INFO_SESSION_KEY="userInfo";
 
+
     /*Confirm that the user has been loged in during this session else redirect to log in screen*/
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse,
@@ -37,17 +38,6 @@ public class AuthFilter implements Filter {
       
         Boolean isLogedIn = (Boolean) request.getSession(true).getAttribute(LOG_IN_SESSION_KEY);
         
-        /*   
-        String lang = (String) request.getSession(true).getAttribute("lang"); 
-        if(lang==null)
-        {
-            lang=request.getLocale().toString();
-        }
-       
-      response.setLocale(new Locale("ar"));
-        System.out.println(response.getLocale());
-        System.out.println(request.getLocale());
-*/
         //if its the first session for the user make isLogIn=false insted of null
         if (isLogedIn == null)
             isLogedIn = false;

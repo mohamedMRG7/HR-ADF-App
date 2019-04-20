@@ -2,7 +2,7 @@ package employees;
 
 public class EmployeeBindingIDS {
     
-    
+    /*View Bindings attributes*/
     public static final String EMPLOYEE_ID="EmployeeId1";
     public static final String FIRST_NAME="FirstName1";
     public static final String LAST_NAME="LastName1";
