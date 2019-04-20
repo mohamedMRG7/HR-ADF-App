@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="DepartmentsView"
+  Name="DepartmentsVO"
   Version="12.1.3.10.8"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -78,7 +78,7 @@
   </ListBinding>
   <EntityUsage
     Name="Departments"
-    Entity="model.eo.Departments"/>
+    Entity="model.eo.DepartmentsEO"/>
   <ViewAttribute
     Name="DepartmentId"
     IsNotNull="true"
@@ -132,7 +132,7 @@
   </ViewAttribute>
   <ViewCriteria
     Name="DepartmentsViewCriteria"
-    ViewObjectName="model.vo.DepartmentsView"
+    ViewObjectName="model.vo.DepartmentsVO"
     Conjunction="AND">
     <Properties>
       <CustomProperties>

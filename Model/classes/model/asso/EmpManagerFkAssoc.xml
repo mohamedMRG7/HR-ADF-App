@@ -13,29 +13,29 @@
     Name="ManagerIdEmployees"
     Cardinality="1"
     Source="true"
-    Owner="model.eo.Employees">
+    Owner="model.eo.EmployeesEO">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="ManagerIdEmployees"/>
-      <Attr Name="_foreignKey" Value="model.eo.Employees.EmpEmpIdPk"/>
+      <Attr Name="_foreignKey" Value="model.eo.EmployeesEO.EmpEmpIdPk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Employees.EmployeeId"/>
+      <Item Value="model.eo.EmployeesEO.EmployeeId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
     Name="Employees"
     Cardinality="-1"
-    Owner="model.eo.Employees">
+    Owner="model.eo.EmployeesEO">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="Employees"/>
-      <Attr Name="_foreignKey" Value="model.eo.Employees.EmpManagerFk"/>
+      <Attr Name="_foreignKey" Value="model.eo.EmployeesEO.EmpManagerFk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Employees.ManagerId"/>
+      <Item Value="model.eo.EmployeesEO.ManagerId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

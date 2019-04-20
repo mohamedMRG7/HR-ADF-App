@@ -23,13 +23,13 @@
   <ViewLinkDefEnd
     Name="DepartmentsView"
     Cardinality="-1"
-    Owner="model.vo.DepartmentsView">
+    Owner="model.vo.DepartmentsVO">
     <DesignTime>
       <Attr Name="_finderName" Value="DepartmentsView"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.vo.DepartmentsView.ManagerId"/>
+      <Item Value="model.vo.DepartmentsVO.ManagerId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

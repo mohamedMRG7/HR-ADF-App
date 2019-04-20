@@ -28,7 +28,7 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="DepartmentsView1"
-    ViewObjectName="model.vo.DepartmentsView"
+    ViewObjectName="model.vo.DepartmentsVO"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="EmployeesROV1"

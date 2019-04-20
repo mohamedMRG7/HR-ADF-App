@@ -16,7 +16,7 @@ import oracle.jbo.server.TransactionEvent;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class EmployeesImpl extends EntityImpl {
+public class EmployeesEOImpl extends EntityImpl {
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -40,7 +40,7 @@ public class EmployeesImpl extends EntityImpl {
         private static final int firstIndex = 0;
 
         public int index() {
-            return AttributesEnum.firstIndex() + ordinal();
+            return EmployeesEOImpl.AttributesEnum.firstIndex() + ordinal();
         }
 
         public static final int firstIndex() {
@@ -48,12 +48,12 @@ public class EmployeesImpl extends EntityImpl {
         }
 
         public static int count() {
-            return AttributesEnum.firstIndex() + AttributesEnum.staticValues().length;
+            return EmployeesEOImpl.AttributesEnum.firstIndex() + EmployeesEOImpl.AttributesEnum.staticValues().length;
         }
 
         public static final AttributesEnum[] staticValues() {
             if (vals == null) {
-                vals = AttributesEnum.values();
+                vals = EmployeesEOImpl.AttributesEnum.values();
             }
             return vals;
         }
@@ -78,7 +78,7 @@ public class EmployeesImpl extends EntityImpl {
     /**
      * This is the default constructor (do not remove).
      */
-    public EmployeesImpl() {
+    public EmployeesEOImpl() {
     }
 
     /**
@@ -274,28 +274,28 @@ public class EmployeesImpl extends EntityImpl {
     /**
      * @return the associated entity EmployeesImpl.
      */
-    public EmployeesImpl getManagerIdEmployees() {
-        return (EmployeesImpl) getAttributeInternal(MANAGERIDEMPLOYEES);
+    public EmployeesEOImpl getManagerIdEmployees() {
+        return (EmployeesEOImpl) getAttributeInternal(MANAGERIDEMPLOYEES);
     }
 
     /**
      * Sets <code>value</code> as the associated entity EmployeesImpl.
      */
-    public void setManagerIdEmployees(EmployeesImpl value) {
+    public void setManagerIdEmployees(EmployeesEOImpl value) {
         setAttributeInternal(MANAGERIDEMPLOYEES, value);
     }
 
     /**
      * @return the associated entity DepartmentsImpl.
      */
-    public DepartmentsImpl getDepartments1() {
-        return (DepartmentsImpl) getAttributeInternal(DEPARTMENTS1);
+    public DepartmentsEOImpl getDepartments1() {
+        return (DepartmentsEOImpl) getAttributeInternal(DEPARTMENTS1);
     }
 
     /**
      * Sets <code>value</code> as the associated entity DepartmentsImpl.
      */
-    public void setDepartments1(DepartmentsImpl value) {
+    public void setDepartments1(DepartmentsEOImpl value) {
         setAttributeInternal(DEPARTMENTS1, value);
     }
 
@@ -312,7 +312,7 @@ public class EmployeesImpl extends EntityImpl {
      * @return the definition object for this instance class.
      */
     public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.eo.Employees");
+        return EntityDefImpl.findDefObject("model.eo.EmployeesEO");
     }
 
 

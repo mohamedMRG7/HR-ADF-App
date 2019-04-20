@@ -9,7 +9,7 @@
   </executables>
   <bindings>
     <tree IterBinding="DepartmentsVOIterator" id="DepartmentsVO">
-      <nodeDefinition DefName="model.vo.DepartmentsView" Name="DepartmentsVO0">
+      <nodeDefinition DefName="model.vo.DepartmentsVO" Name="DepartmentsVO0">
         <AttrNames>
           <Item Value="DepartmentId"/>
           <Item Value="DepartmentName"/>

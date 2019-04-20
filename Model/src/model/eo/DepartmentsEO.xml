@@ -3,14 +3,14 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Departments"
+  Name="DepartmentsEO"
   Version="12.1.3.10.8"
   InheritPersonalization="merge"
   DBObjectType="table"
   DBObjectName="DEPARTMENTS"
   AliasName="Departments"
   BindingStyle="OracleName"
-  RowClass="model.eo.DepartmentsImpl">
+  RowClass="model.eo.DepartmentsEOImpl">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|DML"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -28,7 +28,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.Departments.DepartmentId_LABEL"/>
+          ResId="model.eo.DepartmentsEO.DepartmentId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -47,7 +47,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.Departments.DepartmentName_LABEL"/>
+          ResId="model.eo.DepartmentsEO.DepartmentName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -63,7 +63,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.Departments.ManagerId_LABEL"/>
+          ResId="model.eo.DepartmentsEO.ManagerId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -79,7 +79,7 @@
     <Properties>
       <SchemaBasedProperties>
         <LABEL
-          ResId="model.eo.Departments.LocationId_LABEL"/>
+          ResId="model.eo.DepartmentsEO.LocationId_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -104,7 +104,7 @@
       <Attr Name="_DBObjectName" Value="DEPT_ID_PK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Departments.DepartmentId"/>
+      <Item Value="model.eo.DepartmentsEO.DepartmentId"/>
     </AttrArray>
   </Key>
   <Key
@@ -124,7 +124,7 @@
       <Attr Name="_DBObjectName" Value="DEPT_LOC_FK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Departments.LocationId"/>
+      <Item Value="model.eo.DepartmentsEO.LocationId"/>
     </AttrArray>
   </Key>
   <Key
@@ -135,7 +135,7 @@
       <Attr Name="_DBObjectName" Value="DEPT_MGR_FK"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Departments.ManagerId"/>
+      <Item Value="model.eo.DepartmentsEO.ManagerId"/>
     </AttrArray>
   </Key>
   <ResourceBundle>

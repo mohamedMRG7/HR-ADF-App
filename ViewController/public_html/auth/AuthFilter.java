@@ -21,6 +21,7 @@ public class AuthFilter implements Filter {
     public void init(FilterConfig filterConfig) throws ServletException {
         // TODO Implement this method
     }
+    
     private final String LOG_IN_PAGE_PATHE = "/logIn";
     public static final String LOG_IN_SESSION_KEY = "isLogedIn";
     public static final String USER_INFO_SESSION_KEY="userInfo";

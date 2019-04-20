@@ -11,13 +11,13 @@
     Name="DepartmentsView1_1"
     Cardinality="1"
     Source="true"
-    Owner="model.vo.DepartmentsView">
+    Owner="model.vo.DepartmentsVO">
     <DesignTime>
       <Attr Name="_finderName" Value="DepartmentsView1"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.vo.DepartmentsView.DepartmentId"/>
+      <Item Value="model.vo.DepartmentsVO.DepartmentId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd

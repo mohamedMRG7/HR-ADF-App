@@ -20,7 +20,7 @@ import oracle.jbo.server.TransactionEvent;
 // ---    Custom code may be added to this class.
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
-public class DepartmentsImpl extends EntityImpl {
+public class DepartmentsEOImpl extends EntityImpl {
     /**
      * AttributesEnum: generated enum for identifying attributes and accessors. DO NOT MODIFY.
      */
@@ -35,7 +35,7 @@ public class DepartmentsImpl extends EntityImpl {
         private static final int firstIndex = 0;
 
         public int index() {
-            return AttributesEnum.firstIndex() + ordinal();
+            return DepartmentsEOImpl.AttributesEnum.firstIndex() + ordinal();
         }
 
         public static final int firstIndex() {
@@ -43,12 +43,13 @@ public class DepartmentsImpl extends EntityImpl {
         }
 
         public static int count() {
-            return AttributesEnum.firstIndex() + AttributesEnum.staticValues().length;
+            return DepartmentsEOImpl.AttributesEnum.firstIndex() +
+                   DepartmentsEOImpl.AttributesEnum.staticValues().length;
         }
 
         public static final AttributesEnum[] staticValues() {
             if (vals == null) {
-                vals = AttributesEnum.values();
+                vals = DepartmentsEOImpl.AttributesEnum.values();
             }
             return vals;
         }
@@ -65,14 +66,14 @@ public class DepartmentsImpl extends EntityImpl {
     /**
      * This is the default constructor (do not remove).
      */
-    public DepartmentsImpl() {
+    public DepartmentsEOImpl() {
     }
 
     /**
      * @return the definition object for this instance class.
      */
     public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.eo.Departments");
+        return EntityDefImpl.findDefObject("model.eo.DepartmentsEO");
     }
 
 

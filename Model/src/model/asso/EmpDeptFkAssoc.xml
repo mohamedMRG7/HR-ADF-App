@@ -13,29 +13,29 @@
     Name="Departments1"
     Cardinality="1"
     Source="true"
-    Owner="model.eo.Departments">
+    Owner="model.eo.DepartmentsEO">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="Departments1"/>
-      <Attr Name="_foreignKey" Value="model.eo.Departments.DeptIdPk"/>
+      <Attr Name="_foreignKey" Value="model.eo.DepartmentsEO.DeptIdPk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Departments.DepartmentId"/>
+      <Item Value="model.eo.DepartmentsEO.DepartmentId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
     Name="Employees1"
     Cardinality="-1"
-    Owner="model.eo.Employees">
+    Owner="model.eo.EmployeesEO">
     <DesignTime>
       <Attr Name="_aggregation" Value="0"/>
       <Attr Name="_finderName" Value="Employees1"/>
-      <Attr Name="_foreignKey" Value="model.eo.Employees.EmpDeptFk"/>
+      <Attr Name="_foreignKey" Value="model.eo.EmployeesEO.EmpDeptFk"/>
       <Attr Name="_isUpdateable" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.eo.Employees.DepartmentId"/>
+      <Item Value="model.eo.EmployeesEO.DepartmentId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

@@ -9,10 +9,10 @@
   ClearCacheOnRollback="true">
   <ViewUsage
     Name="DepartmentsVO"
-    ViewObjectName="model.vo.DepartmentsView">
+    ViewObjectName="model.vo.DepartmentsVO">
     <ViewCriteriaUsage
       Name="DepartmentsViewCriteria"
-      FullName="model.vo.DepartmentsView.DepartmentsViewCriteria"/>
+      FullName="model.vo.DepartmentsVO.DepartmentsViewCriteria"/>
   </ViewUsage>
   <ViewUsage
     Name="EmployeesVO"

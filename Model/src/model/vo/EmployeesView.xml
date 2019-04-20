@@ -63,7 +63,7 @@
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="DepartmentsView1"
-    ViewObjectName="model.vo.DepartmentsView"
+    ViewObjectName="model.vo.DepartmentsVO"
     RowLevelBinds="true"/>
   <ViewAccessor
     Name="JobsROV1"
@@ -128,7 +128,7 @@
   </ListBinding>
   <EntityUsage
     Name="Employees"
-    Entity="model.eo.Employees"/>
+    Entity="model.eo.EmployeesEO"/>
   <ViewAttribute
     Name="EmployeeId"
     IsNotNull="true"
